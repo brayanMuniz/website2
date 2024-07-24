@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+// Markdown
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
 import 'katex/dist/katex.min.css';
-import { Link } from 'react-router-dom';
 
 type LinkItem = {
   text: string;
   url: string;
 };
-
 
 const NotePage: React.FC = () => {
   const { page } = useParams<{ page: string }>();
@@ -30,7 +31,6 @@ const NotePage: React.FC = () => {
       }
       foundLinks.add({ text: match[1], url: link });
     }
-    console.log(`All found links: ${Array.from(foundLinks)}`);
     setLinks(Array.from(foundLinks));
   };
 
@@ -45,23 +45,9 @@ const NotePage: React.FC = () => {
   }, [page]);
 
   return (
+    <div className="flex" data-theme="dark">
 
-    <div className="flex">
-
-      <aside className="w-1/4 p-4 bg-gray-100">
-
-        <ul>
-          {links.map((link) => (
-            <li key={link.url}>
-              <Link to={link.url} replace>{link.text}</Link>
-            </li>
-          ))}
-        </ul>
-
-        <h2 className="text-xl font-bold mb-4">Links</h2>
-      </aside>
-
-      <main className="w-3/4 p-4">
+      <main className="markdown-body main-content w-10/12">
         <ReactMarkdown
           remarkPlugins={[remarkMath, remarkGfm]}
           rehypePlugins={[rehypeRaw, rehypeKatex]}
@@ -69,6 +55,16 @@ const NotePage: React.FC = () => {
           {markdown}
         </ReactMarkdown>
       </main>
+
+      <aside className="w-2/12">
+        <ul>
+          {links.map((link) => (
+            <li key={link.url}>
+              <Link to={link.url} replace>{link.text}</Link>
+            </li>
+          ))}
+        </ul>
+      </aside>
 
     </div>
   );

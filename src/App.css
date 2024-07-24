@@ -1,3 +1,8 @@
+/* tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Include KaTeX CSS for math rendering */
 @import 'katex/dist/katex.min.css';
 
@@ -30,9 +35,3 @@ img {
   display: block;
   margin: 1rem 0;
 }
-
-/*
- * github like style
- * https://github.com/iamcco/markdown.css/blob/master/dest/github/markdown.css
- */
-
