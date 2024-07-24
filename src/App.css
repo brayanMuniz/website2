@@ -1,38 +1,38 @@
+/* Include KaTeX CSS for math rendering */
+@import 'katex/dist/katex.min.css';
+
+/* Add custom styles */
 .App {
-  text-align: center;
+  font-family: sans-serif;
+  padding: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+details summary {
+  cursor: pointer;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+details summary::marker {
+  content: "▶ ";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+details[open] summary::marker {
+  content: "▼ ";
 }
 
-.App-link {
-  color: #61dafb;
+details p {
+  margin: 1rem 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
 }
+
+/*
+ * github like style
+ * https://github.com/iamcco/markdown.css/blob/master/dest/github/markdown.css
+ */
+
