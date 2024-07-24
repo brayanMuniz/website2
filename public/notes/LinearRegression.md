@@ -103,7 +103,7 @@ The algorithm starts immediately, updating for every row in the training data.
 ### 2. Pure Algebra
 Is there a way to optimize $J(\theta)$ without using an iterative approach?  
 Yes, and the math is cute and funny too.  
-You will need to take a look at [[Matrix Derivatives]] and [[Matrix Trace]] in order for the notation to make sense.  
+You will need to take a look at [Matrix Derivatives](./MatrixDerivatives) and [[Matrix Trace]] in order for the notation to make sense.  
 
 > One final piece of notation. 僕は絶対に約束する   
 > Drop the intercept $\theta_0$ to simply get:
