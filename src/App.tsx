@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import './App.css';
 
-function App() {
+import remarkGfm from 'remark-gfm'
+import rehypeKatex from 'rehype-katex'
+import rehypeRaw from 'rehype-raw';
+import remarkMath from 'remark-math'
+import 'katex/dist/katex.min.css'
+
+const App: React.FC = () => {
+  const [markdown, setMarkdown] = useState('');
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/notes/LinearRegression.md`)
+      .then(response => response.text())
+      .then(text => setMarkdown(text));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ReactMarkdown
+        remarkPlugins={[remarkMath, remarkGfm]}
+        rehypePlugins={[rehypeKatex, rehypeRaw]}
+      >
+        {markdown}
+      </ReactMarkdown>
     </div>
   );
-}
+};
 
 export default App;
+
