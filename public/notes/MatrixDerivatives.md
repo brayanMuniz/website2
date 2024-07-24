@@ -27,7 +27,7 @@ $$
 Every position means that it is taking the partial derivative with respect to that position. 
 
 ## Using The Trace to get some Facts
-For these next parts to make sense take a look at [[Matrix Trace]]. 
+For these next parts to make sense take a look at [Matrix Trace](./MatrixTrace). 
 
 1. $$ \nabla_A \text{tr} AB = B^T $$
 2. $$ \nabla_{A^T} f(A) = (\nabla_A f(A))^T $$
