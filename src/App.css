@@ -5,33 +5,3 @@
 
 /* Include KaTeX CSS for math rendering */
 @import 'katex/dist/katex.min.css';
-
-/* Add custom styles */
-.App {
-  font-family: sans-serif;
-  padding: 2rem;
-}
-
-details summary {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-details summary::marker {
-  content: "▶ ";
-}
-
-details[open] summary::marker {
-  content: "▼ ";
-}
-
-details p {
-  margin: 1rem 0;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem 0;
-}
