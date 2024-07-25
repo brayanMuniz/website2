@@ -45,9 +45,9 @@ const NotePage: React.FC = () => {
   }, [page]);
 
   return (
-    <div className="flex" data-theme="dark">
 
-      <main className="markdown-body main-content w-10/12">
+    <div className="flex min-h-screen text-gray-100" data-theme="dark">
+      <main className="markdown-body flex-grow p-8 w-4/5">
         <ReactMarkdown
           remarkPlugins={[remarkMath, remarkGfm]}
           rehypePlugins={[rehypeRaw, rehypeKatex]}
@@ -56,17 +56,21 @@ const NotePage: React.FC = () => {
         </ReactMarkdown>
       </main>
 
-      <aside className="w-2/12">
-        <ul>
+      <aside className="w-1/5 p-4 bg-gray-800">
+        <ul className='flex flex-col space-y-4 mt-8 fixed top-0 mr-1 items-start'>
           {links.map((link) => (
-            <li key={link.url}>
-              <Link to={link.url} replace>{link.text}</Link>
+
+            <li key={link.url} className="p-2">
+              <Link to={link.url} className="text-blue-400 hover:text-blue-500 hover:underline text-lg">
+                {link.text}
+              </Link>
             </li>
+
           ))}
         </ul>
       </aside>
-
     </div>
+
   );
 
 };
