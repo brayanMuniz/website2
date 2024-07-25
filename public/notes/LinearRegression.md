@@ -22,7 +22,7 @@ One way to do it is by looking at the errors between our model and the real $y$ 
 
 ## Optimizing Errors 
 Define a new function $J(\theta)$ that will be used to tell us the value of our errors.  
-Use [Ordinary Least Squares](./OrdinaryLeastSquares.md) to define our new cost function: $J(\theta)$ and try to optimize that. 
+Use [Ordinary Least Squares](./OrdinaryLeastSquares) to define our new cost function: $J(\theta)$ and try to optimize that. 
 $$
 J(\theta) = \frac{1}{2} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2
 $$
@@ -41,7 +41,7 @@ As you can imagine the error values are just the $y$ values of our data.
 Let's put our line closer towards where the points are. Leading to a reduction of our errors.  
 Now what if we keep doing this? Keep trying to fit it, moving it little by little every time depending on our cost?  
 And we can optimize this, using the derivative of our cost function as a lead.  
-This is [Gradient Descent](./GradientDescent.md), which starts with a random $\theta$ and performs an update every time. 
+This is [Gradient Descent](./GradientDescent), which starts with a random $\theta$ and performs an update every time. 
 $$ \theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta) $$
 $\alpha$ here is the learning rate, defined by us, telling the iteration how big of a step to take.  
 
@@ -72,7 +72,7 @@ Now we have our update rule:
 $$ 
   \theta_j := \theta_j + \alpha(y^{(i)}-h_\theta(x^{(i)}))x_j^{(i)}
 $$
-This rule is called the [Least Mean Squares](./LMS.md) update rule. 
+This rule is called the [Least Mean Squares](./LMS) update rule. 
 
 Now that we found a way to optimize for one row, we need to incorporate all the rows.  
 Repeat until convergence:  
@@ -80,7 +80,7 @@ $$
 \theta_j := \theta_j + \alpha \sum_{i=1}^{m} (y^{(i)} - h_\theta(x^{(i)})) x_j^{(i)} \quad \text{(for every } j).
 $$
 
-This method of taking the input of every training example on every step and updating accordingly is called [Batch Gradient Descent](./BatchGradientDescent.md).   
+This method of taking the input of every training example on every step and updating accordingly is called [Batch Gradient Descent](./BatchGradientDescent).   
 > This is a very expensive algorithm to run, because as $m$ becomes large, you need to look at all the data in order to take a single step.  
 
 The function will look like a quadratic function and the contours of the function represent the minimum as you converge.  
@@ -91,7 +91,7 @@ As you approach the minimum, fewer steps are being taken, because there is less 
 | -------------------------------------------------------- | --------------------------------------------------------- |
 | ![Quadratic Function](../Images/3DQuadraticFunction.png) | ![Contours](../Images/CountoursOf3DQuadraticFunction.png) |
 
-Another way to do this is by using [Stochastic Gradient Descent](./StochasticGradientDescent.md).
+Another way to do this is by using [Stochastic Gradient Descent](./StochasticGradientDescent).
 `for i = 1 to m`:
 $$
 \theta_j := \theta_j + \alpha  (y^{(i)} - h_\theta(x^{(i)})) x_j^{(i)} \quad \text{(for every } j).
