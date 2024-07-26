@@ -33,7 +33,7 @@ const projects: Project[] = [
     alt: "A preview of NihongoSync",
     title: "NihongoSync",
     projectLink: "",
-    repoLink: "",
+    repoLink: "https://github.com/brayanMuniz/NihongoSync",
     description:
       "A web application to keep track of the reviews you've done in WaniKani by using a Go server with PostgreSQL. The client maps the content you've watched from Learn Natively and maps it to the level in WaniKani.",
     list: ["Typescript", "Go", "PostgreSQL", "React"],
@@ -48,7 +48,7 @@ const projects: Project[] = [
     alt: "A preview of the Workout App",
     title: "Workout App",
     projectLink: "https://strength.netlify.app",
-    repoLink: "",
+    repoLink: "https://github.com/brayanMuniz/power-app",
     description:
       "A workout app to help people keep track of their current workout and past workouts.",
     list: ["Typescript", "VueJs", "Vuetify", "Firebase"],
@@ -62,14 +62,12 @@ const projects: Project[] = [
     alt: "A preview of vue-maze-game",
     title: "Vue Maze Game",
     projectLink: "https://vue-maze-game.netlify.app",
-    repoLink: "",
+    repoLink: "https://github.com/brayanMuniz/vue-maze-game",
     description:
       "A simple maze game played on the browser that can be played by multiple people at once.",
     list: ["Typescript", "VueJs", "Firebase"],
     icons: ["faJs", "faVuejs", "faFire"],
     status: 'Done'
-
-
   },
 
   {
@@ -77,7 +75,7 @@ const projects: Project[] = [
     alt: "A preview of the Chat-App website",
     title: "Chat App",
     projectLink: "https://bcaa.netlify.app/",
-    repoLink: "",
+    repoLink: "https://github.com/brayanMuniz/chat-app",
     description:
       "My goal for this project was to be able to have a generic chat-app that could update in real-time. I learned how to fully use Vue.js and its third-party libraries Vuex and Vue-router, with a NoSQL database, Firebase, to store all the messages and chat-room images.",
     list: ["CSS", "JavaScript", "VueJs", "Firebase"],
@@ -138,7 +136,7 @@ const Projects: React.FC = () => {
               className="w-5/12 bg-gray-700 p-1 rounded-lg hover:bg-gray-600 transition duration-300 relative"
             >
               <img src={project.img} alt={project.alt} className="w-full h-80 object-cover rounded-t-lg" />
-              <span className={`absolute bottom-2 right-2 text-xs font-bold px-2 py-1 rounded ${project.status === 'Done' ? 'bg-green-500' : 'bg-yellow-500'}`}>
+              <span className={`absolute bottom-2 right-2 text-xs font-bold px-2 py-1 rounded ${project.status === 'Done' ? 'bg-blue-400' : 'bg-yellow-500'}`}>
                 {project.status}
               </span>
             </a>

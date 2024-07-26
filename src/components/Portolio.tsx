@@ -1,17 +1,54 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faProjectDiagram, faStickyNote } from '@fortawesome/free-solid-svg-icons';
+
+
+// components 
+import Skills from './Skills';
+import Projects from './Projects';
 
 const Portfolio: React.FC = () => {
   return (
-    <div className="Portfolio">
+    <div className="bg-gray-900 text-gray-100 min-h-screen">
 
+      <div className="relative mb-12 pt-12 mx-auto max-w-4xl text-primary text-center py-10 shadow-lg rounded-lg shadow-gray-600">
+        <h1 className="text-5xl font-bold mb-4">Hi, I'm Brayan</h1>
+        <h2 className="text-2xl mb-4">Aspiring Software Engineer</h2>
+        <p className="text-lg mb-8 mx-auto px-10">
+          Senior at the University of Texas at Dallas studying Computer Science. Specializing in web applications using React, Vue, Node.js, and Go. Passionate about solving real-world problems through technology.
+        </p>
+      </div>
 
-      <div className="bg-gray-800 text-gray-100 p-4 flex justify-between items-center">
-        <div className="space-x-4">
-          <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Discord</a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">GitHub</a>
-          <Link to="/notes/intro" className="text-blue-400 hover:underline">Notes</Link>
-          <a href="#projects" className="text-blue-400 hover:underline">Projects</a>
+      <Skills />
+
+      <Projects />
+
+      <div className="bg-gray-900 text-gray-100 py-12 flex justify-center items-center space-x-8">
+
+        <div className="flex items-center space-x-4">
+          <span className="text-lg font-bold text-white">Contact:</span>
+          <a href="mailto:brayanMuniz2636@gmail.com" className="text-blue-400 hover:underline flex items-center space-x-2">
+            <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+            <span>brayanMuniz2636@gmail.com</span>
+          </a>
+          <a href="https://discordapp.com/users/531174024622112788" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline flex items-center space-x-2">
+            <FontAwesomeIcon icon={faDiscord} size="2xl" />
+          </a>
+          <a href="https://github.com/brayanMuniz" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline flex items-center space-x-2">
+            <FontAwesomeIcon icon={faGithub} size="2xl" />
+          </a>
+          <a href="https://www.linkedin.com/in/brayan-muniz-4ba407161/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline flex items-center space-x-2">
+            <FontAwesomeIcon icon={faLinkedin} size="2xl" />
+          </a>
+        </div>
+
+        <div>
+          <Link to="/notes/intro" className="text-blue-400 hover:underline flex items-center space-x-2">
+            <FontAwesomeIcon icon={faStickyNote} size="2xl" />
+            <span>University Notes</span>
+          </Link>
         </div>
       </div>
 
