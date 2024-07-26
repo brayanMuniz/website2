@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faProjectDiagram, faStickyNote } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faStickyNote } from '@fortawesome/free-solid-svg-icons';
 
 
 // components 
@@ -45,7 +45,7 @@ const Portfolio: React.FC = () => {
         </div>
 
         <div>
-          <Link to="/notes/intro" className="text-blue-400 hover:underline flex items-center space-x-2">
+          <Link to="/notes" className="text-blue-400 hover:underline flex items-center space-x-2">
             <FontAwesomeIcon icon={faStickyNote} size="2xl" />
             <span>University Notes</span>
           </Link>

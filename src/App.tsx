@@ -6,6 +6,7 @@ import './css/markdown.css';
 
 import Portfolio from './components/Portolio';
 import NotePage from './components/NotePage';
+import NotesDashboard from './components/NotesDashboard';
 
 const router = createBrowserRouter([
   {
@@ -13,8 +14,16 @@ const router = createBrowserRouter([
     element: <Portfolio />,
   },
   {
+    path: '/notes',
+    element: <NotesDashboard />,
+  },
+  {
     path: '/notes/:page',
     element: <NotePage />,
+  },
+  {
+    path: '*',
+    element: <Portfolio />, // Fallback to Portfolio for undefined routes
   },
 ]);
 
