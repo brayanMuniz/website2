@@ -68,6 +68,9 @@ const NotePage: React.FC = () => {
 
           ))}
         </ul>
+
+
+
       </aside>
     </div>
 

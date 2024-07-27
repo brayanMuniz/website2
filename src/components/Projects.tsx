@@ -44,7 +44,7 @@ const projects: Project[] = [
   },
 
   {
-    img: require("../assets/workout-app.jpg"),
+    img: require("../assets/workout-app.png"),
     alt: "A preview of the Workout App",
     title: "Workout App",
     projectLink: "https://strength.netlify.app",
