@@ -9,7 +9,3 @@ The markdown styling for this project was inspired by the work of [iamcco](https
 
 I use [Neovim](https://neovim.io) btw
 
-## Markdown Styling Inspiration
-
-The markdown styling for this project was inspired by the work of [iamcco](https://github.com/iamcco). Specifically, the [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) plugin provided significant inspiration.
-
