@@ -21,6 +21,7 @@ const NotePage: React.FC = () => {
   const [links, setLinks] = useState<LinkItem[]>([]);
 
   const extractLinks = (markdownText: string) => {
+    // eslint-disable-next-line no-useless-escape
     const linkRegex = /(?<!\!)\[([^\]]+)\]\(([^)]+)\)/g;
     const foundLinks = new Set<LinkItem>();
     let match;
@@ -68,8 +69,6 @@ const NotePage: React.FC = () => {
 
           ))}
         </ul>
-
-
 
       </aside>
     </div>
