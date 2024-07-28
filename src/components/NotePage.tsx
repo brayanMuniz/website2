@@ -35,20 +35,25 @@ const NotePage: React.FC = () => {
     setLinks(Array.from(foundLinks));
   };
 
+  const removeMetadata = (markdownText: string) => {
+    // Remove the metadata section
+    return markdownText.replace(/---\n[\s\S]*?\n---\n/, '');
+  };
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/notes/${page}.md`)
       .then(response => response.text())
       .then(text => {
-        setMarkdown(text);
-        extractLinks(text);
+        const cleanedText = removeMetadata(text);
+        setMarkdown(cleanedText);
+        extractLinks(cleanedText);
       });
   }, [page]);
 
   return (
 
     <div className="flex min-h-screen text-gray-100" data-theme="dark">
-      <main className="markdown-body flex-grow p-8 w-4/5">
+      <main className="markdown-body flex-grow p-8 w-full md:w-4/5 overflow-auto">
         <ReactMarkdown
           remarkPlugins={[remarkMath, remarkGfm]}
           rehypePlugins={[rehypeRaw, rehypeKatex]}
@@ -57,7 +62,7 @@ const NotePage: React.FC = () => {
         </ReactMarkdown>
       </main>
 
-      <aside className="w-1/5 p-4 bg-gray-800">
+      <aside className="hidden md:block w-1/5 p-4 bg-gray-800">
         <ul className='flex flex-col space-y-4 mt-8 fixed top-0 mr-1 items-start'>
           {links.map((link) => (
 

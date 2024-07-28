@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -10,8 +10,24 @@ import Skills from './Skills';
 import Projects from './Projects';
 
 const Portfolio: React.FC = () => {
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText('brayanMuniz2636@gmail.com').then(() => {
+      console.log("Email copied to clipboard"); // Debug point
+      setIsCopied(true);
+      setTimeout(() => {
+        setIsCopied(false);
+        console.log("Popup hidden"); // Debug point
+      }, 2000); // Hide the message after 2 seconds
+    }).catch(err => {
+      console.error("Failed to copy email: ", err); // Debug point
+    });
+  };
+
   return (
-    <div className="bg-gray-900 text-gray-100 min-h-screen">
+    <div className="bg-gray-900 text-gray-100 min-h-screen overflow-auto">
 
       <div className="relative mb-12 pt-12 mx-auto max-w-4xl text-primary text-center py-10 shadow-lg rounded-lg shadow-gray-600">
         <h1 className="text-5xl font-bold mb-4">Hi, I'm Brayan</h1>
@@ -25,14 +41,16 @@ const Portfolio: React.FC = () => {
 
       <Projects />
 
-      <div className="bg-gray-900 text-gray-100 py-12 flex justify-center items-center space-x-8">
+      <div className="bg-gray-900 text-gray-100 py-12 flex flex-col md:flex-row justify-center items-center space-x-8">
 
-        <div className="flex items-center space-x-4">
-          <span className="text-lg font-bold text-white">Contact:</span>
-          <a href="mailto:brayanMuniz2636@gmail.com" className="text-blue-400 hover:underline flex items-center space-x-2">
+        <div className="flex items-center space-x-4 mb-4 md:mb-0">
+          <span className="text-lg font-bold text-white hidden md:inline">Contact:</span>
+
+          <button onClick={copyToClipboard} className="text-blue-400 hover:underline flex items-center space-x-2">
             <FontAwesomeIcon icon={faEnvelope} size="2xl" />
-            <span>brayanMuniz2636@gmail.com</span>
-          </a>
+            <span className="hidden md:inline">brayanMuniz2636@gmail.com</span>
+          </button>
+
           <a href="https://discordapp.com/users/531174024622112788" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline flex items-center space-x-2">
             <FontAwesomeIcon icon={faDiscord} size="2xl" />
           </a>
@@ -44,12 +62,19 @@ const Portfolio: React.FC = () => {
           </a>
         </div>
 
-        <div>
+        <div className="flex justify-center">
           <Link to="/notes" className="text-blue-400 hover:underline flex items-center space-x-2">
             <FontAwesomeIcon icon={faStickyNote} size="2xl" />
             <span>University Notes</span>
           </Link>
         </div>
+
+        {isCopied && (
+          <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded shadow-lg">
+            Email copied to clipboard!
+          </div>
+        )}
+
       </div>
 
     </div>

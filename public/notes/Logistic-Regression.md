@@ -1,3 +1,8 @@
+---
+id: Logistic-Regression
+aliases: []
+tags: []
+---
 
 # Logistic Regression
 [Supervised Learning](./Supervised-Learning) algorithm used for [Classification](./Classification) tasks where the goal is to predict the probability that an instance belongs to a given class or not.   

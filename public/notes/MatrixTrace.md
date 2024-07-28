@@ -1,3 +1,9 @@
+---
+id: MatrixTrace
+aliases: []
+tags: []
+---
+
 The trace of a ***square*** matrix, denoted by "tr", is simply the sum of the diagonal elements. 
 
 $$

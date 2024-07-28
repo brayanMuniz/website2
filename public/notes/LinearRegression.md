@@ -1,3 +1,9 @@
+---
+id: LinearRegression
+aliases: []
+tags: []
+---
+
 # House Example Data 
 | Living Area $(x_1)$ | Bedrooms $(x_1)$| Price $(y)$|
 |-----------------------|--------------------|---------------|

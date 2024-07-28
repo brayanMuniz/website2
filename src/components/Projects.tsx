@@ -105,10 +105,9 @@ const Projects: React.FC = () => {
     <div className="text-gray-100 p-8">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project, index) => (
+          <div key={index} className={`p-4 rounded-lg flex flex-col md:flex-row ${shadowClassHelper(index)}`}>
 
-          <div key={index} className={`p-4 rounded-lg flex ${shadowClassHelper(index)}`}>
-
-            <div className="w-7/12 flex flex-col justify-between">
+            <div className="order-1 md:order-1 md:w-7/12 flex flex-col justify-between">
               <div>
                 <div className="flex items-center mb-2">
                   <h3 className="text-xl font-bold mr-2">{project.title}</h3>
@@ -125,7 +124,6 @@ const Projects: React.FC = () => {
                   </div>
                 ))}
               </div>
-
             </div>
 
             <a
@@ -133,9 +131,9 @@ const Projects: React.FC = () => {
               href={project.projectLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-5/12 bg-gray-700 p-1 rounded-lg hover:bg-gray-600 transition duration-300 relative"
+              className="order-1 md:order-2 w-full md:w-5/12 bg-gray-700 p-1 rounded-lg hover:bg-gray-600 transition duration-300 relative"
             >
-              <img src={project.img} alt={project.alt} className="w-full h-80 object-cover rounded-t-lg" />
+              <img src={project.img} alt={project.alt} className="w-full h-80 object-cover rounded-t-lg md:rounded-t-none md:rounded-l-lg" />
               <span className={`absolute bottom-2 right-2 text-xs font-bold px-2 py-1 rounded ${project.status === 'Done' ? 'bg-blue-400' : 'bg-yellow-500'}`}>
                 {project.status}
               </span>
@@ -143,7 +141,6 @@ const Projects: React.FC = () => {
 
           </div>
         ))}
-
       </div>
     </div>
   );
