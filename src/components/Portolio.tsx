@@ -29,11 +29,11 @@ const Portfolio: React.FC = () => {
   return (
     <div className="bg-gray-900 text-gray-100 min-h-screen overflow-auto">
 
-      <div className="relative mb-12 pt-12 mx-auto max-w-4xl text-primary text-center py-10 shadow-lg rounded-lg shadow-gray-600">
+      <div className="mt-8 relative mb-12 pt-12 mx-auto max-w-4xl text-primary text-center py-10 shadow-lg rounded-lg shadow-gray-600">
         <h1 className="text-5xl font-bold mb-4">Hi, I'm Brayan</h1>
         <h2 className="text-2xl mb-4">Aspiring Software Engineer</h2>
         <p className="text-lg mb-8 mx-auto px-10">
-          Senior at the University of Texas at Dallas studying Computer Science. Specializing in web applications using React, Vue, Node.js, and Go. Passionate about solving real-world problems through technology.
+          Senior at the <a href="https://www.utdallas.edu/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">University of Texas at Dallas</a> studying Computer Science. Specializing in web applications using React, Vue, Node.js, and Go. Passionate about solving real-world problems through technology.
         </p>
       </div>
 

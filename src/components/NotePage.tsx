@@ -30,7 +30,10 @@ const NotePage: React.FC = () => {
       if (link.startsWith('./')) {
         link = link.replace('./', '/notes/');
       }
-      foundLinks.add({ text: match[1], url: link });
+
+      // Remove markdown formatting from link text
+      const plainText = match[1].replace(/\*\*(.*?)\*\*/g, '$1').replace(/__(.*?)__/g, '$1');
+      foundLinks.add({ text: plainText, url: link });
     }
     setLinks(Array.from(foundLinks));
   };
