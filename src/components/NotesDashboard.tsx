@@ -34,6 +34,7 @@ const subjects = [
     name: 'Algorithms',
     image: require("../assets/cubes.jpg"),
     resources: [
+      { type: 'Textbook', name: "https://jeffe.cs.illinois.edu/teaching/algorithms/" }
     ],
   },
 

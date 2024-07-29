@@ -2,13 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-// Markdown
+// Markdown imports
 import ReactMarkdown from 'react-markdown';
+
 import rehypeRaw from 'rehype-raw';
 import rehypeKatex from 'rehype-katex';
+import rehypeHighlight from 'rehype-highlight';
+
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
+
 import 'katex/dist/katex.min.css';
+import '../css/tokyo-night.css'
 
 type LinkItem = {
   text: string;
@@ -59,7 +64,8 @@ const NotePage: React.FC = () => {
       <main className="markdown-body flex-grow p-8 w-full md:w-4/5 overflow-auto">
         <ReactMarkdown
           remarkPlugins={[remarkMath, remarkGfm]}
-          rehypePlugins={[rehypeRaw, rehypeKatex]}
+          rehypePlugins={[rehypeRaw, rehypeKatex, rehypeHighlight]}
+
         >
           {markdown}
         </ReactMarkdown>

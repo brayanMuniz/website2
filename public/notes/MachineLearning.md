@@ -1,3 +1,9 @@
+---
+id: MachineLearning
+aliases: []
+tags: []
+---
+
 ## [**Supervised Learning**](./Supervised-Learning)
 - [**Linear Regression**](./LinearRegression)
   - A method for predicting a continuous target variable based on one or more input features.

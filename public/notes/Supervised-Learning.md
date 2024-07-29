@@ -1,3 +1,9 @@
+---
+id: Supervised-Learning
+aliases: []
+tags: []
+---
+
 Given a training set, we want to get a learning algorithm so that our hypothesis function $h(x)$, 
 can be a good predictor for the corresponding values of $y$. 
 
