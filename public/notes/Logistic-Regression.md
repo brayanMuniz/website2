@@ -75,8 +75,21 @@ $$
 $$
 
 We have the derivation for one row of data, so if we keep updating it with more and more data, we can get closer to our maximum.   
-We have our [[Stochastic Gradient]] ascent rule:
+We have our Stochastic Gradient ascent rule:
 $$
 \theta_j = \theta_j + \alpha (y^{i} - h_\theta(x)^{i}) x_j^{i}
 $$
+
+### Using [Newtons Method](./Newtons-Method.md) to Maximize our Function
+We need to generalize Newtons Method in order fit our multidimensional data.  
+$$
+\theta := \theta - H^{-1}\nabla_\theta \ell(\theta)
+$$
+
+$H$ here is the **Hessian** defined by 
+$$
+H_{ij} = \frac{\partial^{2}\ell(\theta)}{\partial\theta_i\theta_j}
+$$
+
+> This is usually faster than batch gradient, however it can be more expensive, since we have to invert $H$
 

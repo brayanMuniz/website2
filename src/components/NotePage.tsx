@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
 // Markdown imports
 import ReactMarkdown from 'react-markdown';
@@ -21,9 +22,28 @@ type LinkItem = {
 };
 
 const NotePage: React.FC = () => {
+  const navigate = useNavigate();
   const { page } = useParams<{ page: string }>();
   const [markdown, setMarkdown] = useState('');
   const [links, setLinks] = useState<LinkItem[]>([]);
+  const [items, setItems] = useState([]);
+
+  // NOTE: json can only be gotten from the public directory
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/notes/notes.json`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        setItems(data);
+      })
+      .catch(err => {
+        console.error("Error fetching notes.json:", err);
+      });
+  }, []);
 
   const extractLinks = (markdownText: string) => {
     // eslint-disable-next-line no-useless-escape
@@ -58,6 +78,26 @@ const NotePage: React.FC = () => {
       });
   }, [page]);
 
+  const handleOnSearch = (string: string, results: any) => {
+    // onSearch will have as the first callback parameter
+    // the string searched and for the second the results.
+    console.log(string, results)
+  }
+
+  const handleOnSelect = (item: any) => {
+    // the item selected
+    console.log("SELECT", item);
+    navigate(`/notes/${item.id}`); // Navigate to the selected note page
+  };
+
+  const formatResult = (item: any) => {
+    return (
+      <div className="group relative z-10">
+        <span className="block text-left">{item.name}</span>
+      </div>
+    );
+  }
+
   return (
 
     <div className="flex min-h-screen text-gray-100" data-theme="dark">
@@ -65,14 +105,23 @@ const NotePage: React.FC = () => {
         <ReactMarkdown
           remarkPlugins={[remarkMath, remarkGfm]}
           rehypePlugins={[rehypeRaw, rehypeKatex, rehypeHighlight]}
-
         >
           {markdown}
         </ReactMarkdown>
       </main>
 
       <aside className="hidden md:block w-1/5 p-4 bg-gray-800">
-        <ul className='flex flex-col space-y-4 mt-8 fixed top-0 mr-1 items-start'>
+        <div className='mb-4'>
+          <ReactSearchAutocomplete
+            items={items}
+            onSearch={handleOnSearch}
+            onSelect={handleOnSelect}
+            autoFocus
+            formatResult={formatResult}
+          />
+        </div>
+
+        <ul className='flex flex-col space-y-4 mt-8 mr-1 items-start'>
           {links.map((link) => (
 
             <li key={link.url} className="p-2">

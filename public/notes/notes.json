@@ -1,0 +1,82 @@
+[
+    {
+        "id": "MatrixTrace",
+        "name": "Matrix Trace"
+    },
+    {
+        "id": "LMS",
+        "name": "L M S"
+    },
+    {
+        "id": "StochasticGradientDescent",
+        "name": "Stochastic Gradient Descent"
+    },
+    {
+        "id": "Parser",
+        "name": "Parser"
+    },
+    {
+        "id": "Newtons-Method",
+        "name": "Newtons Method"
+    },
+    {
+        "id": "MatrixDerivatives",
+        "name": "Matrix Derivatives"
+    },
+    {
+        "id": "Interpreter",
+        "name": "Interpreter"
+    },
+    {
+        "id": "LinearRegression",
+        "name": "Linear Regression"
+    },
+    {
+        "id": "Logistic-Regression",
+        "name": "Logistic Regression"
+    },
+    {
+        "id": "SVM",
+        "name": "S V M"
+    },
+    {
+        "id": "Bayes-theorem",
+        "name": "Bayes theorem"
+    },
+    {
+        "id": "MachineLearning",
+        "name": "Machine Learning"
+    },
+    {
+        "id": "Sigmoid-Function",
+        "name": "Sigmoid Function"
+    },
+    {
+        "id": "Algorithms",
+        "name": "Algorithms"
+    },
+    {
+        "id": "Classification",
+        "name": "Classification"
+    },
+    {
+        "id": "Supervised-Learning",
+        "name": "Supervised Learning"
+    },
+    {
+        "id": "Lexical-Analysis",
+        "name": "Lexical Analysis"
+    },
+    {
+        "id": "GradientDescent",
+        "name": "Gradient Descent"
+    },
+    {
+        "id": "OrdinaryLeastSquares",
+        "name": "Ordinary Least Squares"
+    },
+    {
+        "id": "BatchGradientDescent",
+        "name": "Batch Gradient Descent"
+    }
+]
