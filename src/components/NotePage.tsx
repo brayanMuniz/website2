@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Navigate } from 'react-router-dom';
+import { useParams, useNavigate, } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
@@ -78,12 +78,6 @@ const NotePage: React.FC = () => {
       });
   }, [page]);
 
-  const handleOnSearch = (string: string, results: any) => {
-    // onSearch will have as the first callback parameter
-    // the string searched and for the second the results.
-    console.log(string, results)
-  }
-
   const handleOnSelect = (item: any) => {
     // the item selected
     console.log("SELECT", item);
@@ -114,7 +108,6 @@ const NotePage: React.FC = () => {
         <div className='mb-4'>
           <ReactSearchAutocomplete
             items={items}
-            onSearch={handleOnSearch}
             onSelect={handleOnSelect}
             autoFocus
             formatResult={formatResult}
