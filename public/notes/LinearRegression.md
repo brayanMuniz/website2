@@ -4,7 +4,11 @@ aliases: []
 tags: []
 ---
 
-# House Example Data 
+# Linear Regression
+
+[Quick Video Explanation](https://www.youtube.com/watch?v=CtsRRUddV2s) 
+
+## House Example Data 
 | Living Area $(x_1)$ | Bedrooms $(x_1)$| Price $(y)$|
 |-----------------------|--------------------|---------------|
 | 2104                  | 3                  | 400           |
