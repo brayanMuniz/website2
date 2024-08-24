@@ -80,7 +80,7 @@ $$
 \theta_j = \theta_j + \alpha (y^{i} - h_\theta(x)^{i}) x_j^{i}
 $$
 
-### Using [Newtons Method](./Newtons-Method.md) to Maximize our Function
+### Using [Newtons Method](./Newtons-Method) to Maximize our Function
 We need to generalize Newtons Method in order fit our multidimensional data.  
 $$
 \theta := \theta - H^{-1}\nabla_\theta \ell(\theta)
