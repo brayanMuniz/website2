@@ -19,8 +19,7 @@ The time required to look at the packets header, and decide where to send the pa
 Also checks for errors.  
 The whole process is done in microseconds.  
 
-## Queuing Delay
-This is the buffer that the packet will wait in as it tries to go out.  
+## [Queuing Delay](./Queuing%20Delay.md)
 
 ## Transmission Delay 
 This is the amount of time it takes to push the packet that is in front of the queue into the link. This is usually done very quickly, and can be derived by getting the length of the packet $L$ and dividing by the transmission rate $R$. The result being: $\frac{L}{R}$

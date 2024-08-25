@@ -5,6 +5,7 @@ tags: []
 ---
 
 # Logistic Regression
+[Quick Video ](https://www.youtube.com/watch?v=yIYKR4sgzI8) 
 [Supervised Learning](./Supervised-Learning) algorithm used for [Classification](./Classification) tasks where the goal is to predict the probability that an instance belongs to a given class or not.   
 We use the [Sigmoid Function](./Sigmoid-Function) to transform the [Linear Regression](./LinearRegression) model's outputs into discreet values instead of continuous ones.  
 

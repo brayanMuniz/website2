@@ -6,7 +6,7 @@ tags: []
 ---
 
 # Mergesort
-This is a [Divide-And-Conquer](notes/Divide-And-Conquer) sorting algorithm that takes advantage of [Recursion](./Recursion.md)
+This is a [Divide-And-Conquer](./Divide-And-Conquer) sorting algorithm that takes advantage of [Recursion](./Recursion.md)
 
 ## Algorithm 
 1. **Divide**: The array into roughly 2 parts
@@ -22,7 +22,9 @@ The real meat and potatoes is in the third step.
 
 ![mergesort.png](../Images/mergesort.PNG)
 
+Proofs don't come naturally to me, and it took me a while to fully understand this, so take your time and convince yourself that this works.  
 | Merge Proof | My visual follow along |
 | -------------- | --------------- |
 | ![Merge Proof](../Images/mergeProof.png) | ![followAlong](../Images/followAlong.jpg) |
 
+## Analysis 
