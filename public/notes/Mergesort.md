@@ -23,6 +23,12 @@ The real meat and potatoes is in the third step.
 ![mergesort.png](../Images/mergesort.PNG)
 
 Proofs don't come naturally to me, and it took me a while to fully understand this, so take your time and convince yourself that this works.  
+> Notation Note 
+$$
+C[n+1...n] \text{ is empty}
+\newline
+D[1...0] \text{ is empty}
+$$
 | Merge Proof | My visual follow along |
 | -------------- | --------------- |
 | ![Merge Proof](../Images/mergeProof.png) | ![followAlong](../Images/followAlong.jpg) |

@@ -87,7 +87,7 @@ $$
 \theta := \theta - H^{-1}\nabla_\theta \ell(\theta)
 $$
 
-$H$ here is the **Hessian** defined by 
+$H$ here is the [Hessian](https://www.youtube.com/watch?v=LbBcuZukCAw) defined by 
 $$
 H_{ij} = \frac{\partial^{2}\ell(\theta)}{\partial\theta_i\theta_j}
 $$

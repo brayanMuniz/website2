@@ -24,6 +24,8 @@ The whole process is done in microseconds.
 ## Transmission Delay 
 This is the amount of time it takes to push the packet that is in front of the queue into the link. This is usually done very quickly, and can be derived by getting the length of the packet $L$ and dividing by the transmission rate $R$. The result being: $\frac{L}{R}$
 
+Keep in mind that most packet switches use [Store and Forward Transmission](./Store%20and%20Forward%20Transmission.md)
+
 ## Propagation Delay 
 The time it takes to actually traverse to the other router.  
 This traverses very quickly, as it is close to the speed of light. $\frac{d}{s}$
