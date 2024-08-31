@@ -9,48 +9,56 @@ tags: []
 The Scheme language, a [Functional Programming Languages](./Functional%20Programming%20Languages.md), which is a dialect of [LISP](./LISP.md), was developed at MIT in the mid-1970s.  
 
 - List Functions
-  • The `CAR` function returns the first element of its list parameter.
-  • The `CDR` function returns its parameter list minus its first element
+  - The `CAR` function returns the first element of its list parameter.
+  - The `CDR` function returns its parameter list minus its first element
   - The function `CONS` takes two parameters and returns a new list with its first parameter as the first element and its second parameter as the remainder of that list.
   - The `LIST` function takes any number of parameters and returns a new list with the parameters as its elements. 
+  - `eq?` is used to determine if two objects are identical. It checks whether the two arguments refer to the exact same object in memory.
+  - `eqv?` is similar, but is slightly more flexible. It is used to compare objects for equivalence, meaning it checks if they are the same in terms of value and type.
+
+
 
 Null list is only one place in memory, so if you declare two list defined by null, and check their eq, will return true.  
 
-## Functions 
-Recursively check each part of `a_list` and see if the `atm` is in there.  
+## List 
+`'(1 2 3)`  makes a list, think of it as `[1, 2, 3]` 
+
+## Functions
+recursively check each part of `a_list` and see if the `atm` is in there.  
 ```scheme
-(DEFINE (member atm a_list)
-  (COND
-    ((NULL? a_list) #F)
-    ((EQ? atm (CAR a_list)) #T)
-    (ELSE (member atm (CDR a_list))))
+(define (member atm a_list)
+  (cond
+    ((null? a_list) #f)
+    ((eq? atm (car a_list)) #t)
+    (else (member atm (cdr a_list))))
 )
 ```
 
 Recursively check the elements of the list 
 > There are not any list within list 
 ```scheme
-(DEFINE (equalsimp list1 list2)
-  (COND
-    ((NULL? list1) (NULL? list2))
-    ((NULL? list2) #F)
-    ((EQ? (CAR list1) (CAR list2))
-     (equalsimp (CDR list1) (CDR list2)))
-    (ELSE #F)))
+(define (equalsimp list1 list2)
+  (cond
+    ((null? list1) (null? list2))
+    ((null? list2) #f)
+    ((eq? (car list1) (car list2))
+     (equalsimp (cdr list1) (cdr list2)))
+    (else #f)))
+)
 ```
 
 Recursively check the list to see if they are equal
 > list can have list 
 ```scheme
-(DEFINE (equal list1 list2)
-  (COND
-    ((NOT (LIST? list1)) (EQ? list1 list2))
-    ((NOT (LIST? list2)) #F)
-    ((NULL? list1) (NULL? list2))
-    ((NULL? list2) #F)
-    ((equal (CAR list1) (CAR list2))
-     (equal (CDR list1) (CDR list2)))
-    (ELSE #F))
+(define (equal list1 list2)
+  (cond
+    ((not (list? list1)) (eq? list1 list2))
+    ((not (list? list2)) #f)
+    ((null? list1) (null? list2))
+    ((null? list2) #f)
+    ((equal (car list1) (car list2))
+     (equal (cdr list1) (cdr list2)))
+    (else #f))
 )
 ```
 

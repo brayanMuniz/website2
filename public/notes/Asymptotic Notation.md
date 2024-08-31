@@ -43,9 +43,7 @@ $$\text{if } c \text{ is some constant} \rightarrow f(N)=\Theta(g(N))$$
 3. $\log^k(n) = O(n)$ for any constant $k$
    
    a. This means that no matter what power of $k$, it will not surpass $O(n)$.
-   
    b. **However:** $\log^k(n)$ has a faster growth rate than $\log(n)$.
-
 
 # Quiz
 ## Question 1

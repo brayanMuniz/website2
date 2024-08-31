@@ -4,24 +4,68 @@
         "name": "Matrix Trace"
     },
     {
+        "id": "Non-Persistent and Persistent Connections",
+        "name": "Non Persistent and Persistent Connections"
+    },
+    {
         "id": "LMS",
         "name": "L M S"
+    },
+    {
+        "id": "DBMS",
+        "name": "D B M S"
     },
     {
         "id": "StochasticGradientDescent",
         "name": "Stochastic Gradient Descent"
     },
     {
+        "id": "Multicore",
+        "name": "Multicore"
+    },
+    {
+        "id": "Syntax",
+        "name": "Syntax"
+    },
+    {
+        "id": "Entity",
+        "name": "Entity"
+    },
+    {
+        "id": "Total Node Delay",
+        "name": "Total Node Delay"
+    },
+    {
+        "id": "Queuing Delay",
+        "name": "Queuing Delay"
+    },
+    {
         "id": "Parser",
         "name": "Parser"
+    },
+    {
+        "id": "TCP",
+        "name": "T C P"
+    },
+    {
+        "id": "Tower-Of-Hanoi",
+        "name": "Tower Of Hanoi"
     },
     {
         "id": "Newtons-Method",
         "name": "Newtons Method"
     },
     {
+        "id": "Network Core",
+        "name": "Network Core"
+    },
+    {
         "id": "MatrixDerivatives",
         "name": "Matrix Derivatives"
+    },
+    {
+        "id": "Data-Dictionary",
+        "name": "Data Dictionary"
     },
     {
         "id": "Interpreter",
@@ -36,12 +80,72 @@
         "name": "Logistic Regression"
     },
     {
+        "id": "Scheme",
+        "name": "Scheme"
+    },
+    {
+        "id": "File Processing",
+        "name": "File Processing"
+    },
+    {
+        "id": "Mergesort",
+        "name": "Mergesort"
+    },
+    {
+        "id": "Client Server Model",
+        "name": "Client Server Model"
+    },
+    {
+        "id": "Packets",
+        "name": "Packets"
+    },
+    {
+        "id": "Propagation Delay",
+        "name": "Propagation Delay"
+    },
+    {
+        "id": "Interrupts",
+        "name": "Interrupts"
+    },
+    {
+        "id": "Store and Forward Transmission",
+        "name": "Store and Forward Transmission"
+    },
+    {
+        "id": "Reductions",
+        "name": "Reductions"
+    },
+    {
+        "id": "Operating System",
+        "name": "Operating System"
+    },
+    {
+        "id": "Asymptotic Notation",
+        "name": "Asymptotic Notation"
+    },
+    {
+        "id": "DML",
+        "name": "D M L"
+    },
+    {
         "id": "SVM",
         "name": "S V M"
     },
     {
+        "id": "Socket",
+        "name": "Socket"
+    },
+    {
+        "id": "Recursion",
+        "name": "Recursion"
+    },
+    {
         "id": "Bayes-theorem",
         "name": "Bayes theorem"
+    },
+    {
+        "id": "HTTP Request Message",
+        "name": "H T T P Request Message"
     },
     {
         "id": "MachineLearning",
@@ -52,31 +156,155 @@
         "name": "Sigmoid Function"
     },
     {
+        "id": "Database Design",
+        "name": "Database Design"
+    },
+    {
+        "id": "Divide-And-Conquer",
+        "name": "Divide And Conquer"
+    },
+    {
         "id": "Algorithms",
         "name": "Algorithms"
+    },
+    {
+        "id": "Internet",
+        "name": "Internet"
+    },
+    {
+        "id": "LISP",
+        "name": "L I S P"
     },
     {
         "id": "Classification",
         "name": "Classification"
     },
     {
+        "id": "Induction",
+        "name": "Induction"
+    },
+    {
+        "id": "ER Model",
+        "name": "E R Model"
+    },
+    {
+        "id": "P2P",
+        "name": "P2 P"
+    },
+    {
+        "id": "DNS",
+        "name": "D N S"
+    },
+    {
+        "id": "Decision Trees",
+        "name": "Decision Trees"
+    },
+    {
         "id": "Supervised-Learning",
         "name": "Supervised Learning"
+    },
+    {
+        "id": "Cookies",
+        "name": "Cookies"
+    },
+    {
+        "id": "SMP",
+        "name": "S M P"
     },
     {
         "id": "Lexical-Analysis",
         "name": "Lexical Analysis"
     },
     {
+        "id": "Perceptron",
+        "name": "Perceptron"
+    },
+    {
+        "id": "Physical Data Independence",
+        "name": "Physical Data Independence"
+    },
+    {
+        "id": "Instruction Execution",
+        "name": "Instruction Execution"
+    },
+    {
+        "id": "DDL",
+        "name": "D D L"
+    },
+    {
+        "id": "Multiprocessor",
+        "name": "Multiprocessor"
+    },
+    {
+        "id": "Computer Networking",
+        "name": "Computer Networking"
+    },
+    {
         "id": "GradientDescent",
         "name": "Gradient Descent"
+    },
+    {
+        "id": "Cache",
+        "name": "Cache"
+    },
+    {
+        "id": "Recurrence-Relation",
+        "name": "Recurrence Relation"
+    },
+    {
+        "id": "Functional Programming Languages",
+        "name": "Functional Programming Languages"
+    },
+    {
+        "id": "Computer-Bus",
+        "name": "Computer Bus"
+    },
+    {
+        "id": "Recursion-Elf",
+        "name": "Recursion Elf"
+    },
+    {
+        "id": "HTTP 3",
+        "name": "H T T P 3"
     },
     {
         "id": "OrdinaryLeastSquares",
         "name": "Ordinary Least Squares"
     },
     {
+        "id": "Semantics",
+        "name": "Semantics"
+    },
+    {
+        "id": "Time-Sharing Systems",
+        "name": "Time Sharing Systems"
+    },
+    {
+        "id": "HTTP 2",
+        "name": "H T T P 2"
+    },
+    {
         "id": "BatchGradientDescent",
         "name": "Batch Gradient Descent"
+    },
+    {
+        "id": "System-bus",
+        "name": "System bus"
+    },
+    {
+        "id": "Quicksort",
+        "name": "Quicksort"
+    },
+    {
+        "id": "Protocol",
+        "name": "Protocol"
+    },
+    {
+        "id": "Database",
+        "name": "Database"
+    },
+    {
+        "id": "Packet-Switches",
+        "name": "Packet Switches"
     }
 ]
