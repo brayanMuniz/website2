@@ -1,7 +1,8 @@
 ---
 id: MachineLearning
 aliases: []
-tags: []
+tags:
+  - Main
 ---
 
 # [**Supervised Learning**](./Supervised-Learning)
@@ -9,6 +10,9 @@ tags: []
   - A method for predicting a continuous target variable based on one or more input features.
 - [**Classification**](./Classification)
   - A technique for assigning input data into predefined categories or classes.
+  - [**Decision Trees**](notes/Decision%20Trees.md)
+    - A greedy algorithm. Use parameters to separate and classify data.  
+  - [**KNN**](./KNN.md)
   - [**Logistic Regression**](./Logistic-Regression)
      - A regression model used for binary classification that predicts the probability of a class.
   - [**Newton's Method**](./Newtons-Method) 

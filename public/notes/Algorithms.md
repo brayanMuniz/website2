@@ -2,7 +2,8 @@
 id: Algorithms
 aliases:
   - Algorithms
-tags: []
+tags:
+  - Main
 ---
 
 

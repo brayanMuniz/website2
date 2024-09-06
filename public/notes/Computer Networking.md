@@ -2,10 +2,13 @@
 id: Computer Networking
 aliases:
   - Computer Networking
-tags: []
+tags:
+  - Main
 ---
 
 # Computer Networking
+[TCP](notes/TCP.md) and [UDP](notes/UDP.md)  
+[Transport Layer](notes/Transport%20Layer.md)
 
 
 # Resources and Misc 

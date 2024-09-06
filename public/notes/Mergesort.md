@@ -34,3 +34,6 @@ $$
 | ![Merge Proof](../Images/mergeProof.png) | ![followAlong](../Images/followAlong.jpg) |
 
 ## Analysis 
+Use a [Recurrence-Relation](./Recurrence-Relation.md) alongside a [Recursion Tree](./Recursion%20Trees.md)  
+Sum all the levels, and the work in each level $\rightarrow n(log(n))$
+
