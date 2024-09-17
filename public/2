@@ -1,0 +1,20 @@
+---
+id: Congestion Control
+aliases:
+  - Congestion Control
+tags: []
+---
+
+# Congestion Control
+[video lecture](https://www.youtube.com/watch?v=Fm92xvIp6JY) 
+
+Too many sources sending too much data too fast for a network to handle.  
+
+![cong1](../Images/congestionControl1.png) 
+![scenario2](../Images/c1) 
+
+![scenario](../Images/c3) 
+
+## Congestion Collapse
+
+

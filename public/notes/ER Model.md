@@ -31,4 +31,27 @@ I like to think of these as a tree, with atomic being the leaves and composite b
 ## Relationship Degree 
 - Unary (Recursive) 
 
+## Binary Relationship Types 
+Depends on direction of how you read it
+- one to one 
+- one to many 
+- many to many 
 
+## Participation Constraint 
+double line means each must participate  
+single line means that they may participate
+
+## Weak Entity Types
+- double rectangle   
+Depends on existence of a strong entity  
+in order to fill in the partial key, use the identifier diamond 
+to connect back to identifier, must have double line  
+
+## Style
+Left to right reading, and up to down  
+descriptors must make sense  
+
+
+Arrow means 1, no arrow means many 
+
+many to many? create a table 

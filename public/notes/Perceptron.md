@@ -6,11 +6,8 @@ tags: []
 ---
 
 # Perceptron
-> TODO:  
-
+[Video Explanation](https://www.youtube.com/watch?v=4Gac5I64LM4)   
 Binary Classification of classifiers  
-
-Open halfspaces? 
 
 ## Perceptron Training Rule 
 
