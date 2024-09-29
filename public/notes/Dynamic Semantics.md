@@ -9,7 +9,7 @@ tags: []
 
 ## Operational Semantics
 
-- **Operational semantics** is to describe the meaning of a statement or program by specifying the effects of running it on a machine.
+- **Operational semantics** is used to describe the meaning of a statement or program by specifying the effects of running it on a machine.
 
 - The effects on the machine are viewed as **the sequence of changes in its state**, where the machine's state is the collection of the values in its storage.
 

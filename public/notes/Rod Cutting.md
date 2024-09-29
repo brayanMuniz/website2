@@ -20,3 +20,15 @@ Say we are going to sell $j$ units.
 Get $P[j]$, now Recurse and find the rest of that, $n - j$  
 This is a "Optimal substructure"  
 
+### Recurrence Function 
+1. Write max amount + recursive strategy as a recurrence
+
+MaxRevenue 
+0 -> 0 
+Max `P[j]` + `MaxRevenue(i-j)`
+
+#### Using [Memoization](notes/Memoization.md)
+i is always between 0 to n  
+So answers will be an array between 0 and n  
+Fill starting from 0 to n.  
+

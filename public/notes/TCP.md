@@ -40,15 +40,13 @@ Take a look at [Reliable Data Transfer](notes/RDT.md)
 #### Sequence Number 
 seq # corresponds to the byte in that segment.  
 
-### Fast Retransmit 
-
-
 ## TCP Congestion Control 
 [video lecture](https://www.youtube.com/watch?v=cIHiSR4j3g4)  
 
 ### AIMD
-Also known as TCP Reno.  
+
 Additive increase, multiplicative decrease  
+Also known as TCP Reno.  
 A sea saw approach, trying to find the right balance between sending as much as you can without overwhelming the network.    
 
 ### sshthresh
@@ -64,6 +62,7 @@ Thus, when the value of cwnd equals ssthresh, slow start ends and TCP transition
 - When TCP Reno detects segment loss through triple duplicate ACKs, the congestion window is halved, and the protocol enters fast recovery.
 - If TCP Reno detects loss due to a timeout, it assumes severe network congestion and resets the congestion window to 1 segment, entering slow start once again. This leads to a much sharper reduction in the window size
 - In fast recovery, the value of cwnd is increased by 1 MSS for every duplicate  ACK received for the missing segment that caused TCP to enter the fast-recovery  state. 
+- `cwnd = Threshhold + 3*MSS` because of the triple ACK
 
 ### TCP Slow Start
 If packet loss occurs, decrease the rate by half, otherwise increase it by adding a segment.  
@@ -79,4 +78,23 @@ Yes! - Because of the additive and multiplicative properties of AIMD
 ![tcpFair](../Images/tcpFair.png) 
 > Under fair assumptions this will work, UDP can just go brrr
 
+
+### TCP Vegas
+Senses the congestion in the network before any packet loss occurs and instantly it decreases the window size. So, TCP Vegas handles the congestion without any packet loss occurring.
+
+- Use `RTT` to get a feel for the congestion situation and base your output based off of that.   
+
+### Router Centric Congestion Avoidance 
+- Modify both routers and hosts
+
+#### DECbit Scheme
+
+#### ECN
+Explicit Congestion Notification 
+- Network assisted congestion control 
+two bits in IP header marked by <u>network router</u> to indicate congestion.  
+
+#### RED
+Random Early Detection 
+- Notify the source that the queue is about to become full, to prevent more loss
 

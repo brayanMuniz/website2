@@ -20,7 +20,7 @@ $$
 $$
 Where L is the bits and R is the transmission rate in bits per second
 
-## Queuing Delays and Packet Loss
+## [Queuing Delay](notes/Queuing%20Delay.md) and Packet Loss
 Packets go to routers one by one.  
 If the router still has not sent out the packet that needs to be sent out, a queue will form.  
 Because of having to wait in line to be sent out, a queue delay will occur.  

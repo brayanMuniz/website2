@@ -7,10 +7,11 @@ tags: []
 
 # Neural Networks
 [3Blue1Brown](https://youtu.be/aircAruvnKk?si=AEWQFv26EGUpokCk)  
-- Uses [Perceptron](notes/Perceptron.md)
+[StatQuest](https://www.youtube.com/watch?v=CqOfi41LfDw)  
+[Code Bullet](https://www.youtube.com/watch?v=JeVDjExBf7Y)  
+Uses [Perceptron](notes/Perceptron.md)
 
-## Using ReLu over Sigmoid 
-Many modern Neural Networks use [ReLu](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) over the [Sigmoid Function](notes/Sigmoid-Function.md) because it is much faster to train on.  
+> Note: Many modern Neural Networks use [ReLu](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) over the [Sigmoid Function](notes/Sigmoid-Function.md) because it is much faster to train on.  
 
 - Input Layer 
 - Hidden Layers 
