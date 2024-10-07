@@ -20,7 +20,7 @@ Size of the segment is determined by the MSS(Maximum Segment Size)
 
 ## TCP round trip time, timeout
 
-### Estimated RTT Formula:
+### Estimated [RTT](notes/RTT.md) Formula:
 $$ \text{EstimatedRTT} = (1 - \alpha) \times \text{EstimatedRTT} + \alpha \times \text{SampleRTT} $$
 - **exponential weighted moving average (EWMA)**
 - Influence of past samples decreases exponentially fast
@@ -31,42 +31,62 @@ $\text{Timeout}=2 \cdot \text{EstRTT}$
 - More of a problem with matching speeds
 - Receiver controls how much is received.  
 - Determined by how much space you have in the client buffer.  
-![flowControl](../Images/flowControlSegment.png) 
+Most of the times, the throughput will be the +-clients_throughput 
 
-## Reliable Data Transfer 
-Take a look at [Reliable Data Transfer](notes/RDT.md)  
-### Sliding Window Protocol 
-
-#### Sequence Number 
-seq # corresponds to the byte in that segment.  
+## [Reliable Data Transfer](notes/RDT.md)
 
 ## TCP Congestion Control 
 [video lecture](https://www.youtube.com/watch?v=cIHiSR4j3g4)  
 
-### AIMD
+### TCP Tahoe
+First TCP variant with congestion control.  
+$$
+\text{TCP Tahoe} = \text{Slow Start} + \text{AIMD}+ \text{Fast Retransmit}
+$$
 
-Additive increase, multiplicative decrease  
-Also known as TCP Reno.  
-A sea saw approach, trying to find the right balance between sending as much as you can without overwhelming the network.    
+![img](../Images/a9.png) 
 
-### sshthresh
-shorthand for “slow start threshold”  
-- if there is a loss event (i.e., congestion) indicated by a timeout, the TCP sender sets the value of cwnd to 1 and begins the slow start process anew.  
-- It also sets the value of ssthresh to cwnd/2—half of the value of the congestion window value when congestion was detected.  
-- The second way in which slow start may end is directly tied to the value of ssthresh.  
-Since ssthresh is half the value of cwnd when congestion was last detected, it might be a bit reckless to keep doubling cwnd when it reaches or surpasses the value of ssthresh.  
-Thus, when the value of cwnd equals ssthresh, slow start ends and TCP transitions into congestion avoidance mode.  
-![sshthreash](../Images/sshthresh.png) 
+#### Slow Start
+- lasts until the congestion window size reaches up to sshthresh
+- sshthresh at the start is set to $\infin$
+- doubles the congestion window every RTT
+> Image: RTT up to 3
 
-### Fast Recovery 
-- When TCP Reno detects segment loss through triple duplicate ACKs, the congestion window is halved, and the protocol enters fast recovery.
-- If TCP Reno detects loss due to a timeout, it assumes severe network congestion and resets the congestion window to 1 segment, entering slow start once again. This leads to a much sharper reduction in the window size
-- In fast recovery, the value of cwnd is increased by 1 MSS for every duplicate  ACK received for the missing segment that caused TCP to enter the fast-recovery  state. 
-- `cwnd = Threshhold + 3*MSS` because of the triple ACK
+#### AIMD
+- Additive increase, multiplicative decrease  
+- Adds to congestion window by 1 
+- Decreases **sshthresh** by 50% of cwnd on packet loss. 
+```python
+if cwnd < sshthresh: 
+  slowstart
+else: 
+  AIMD
+```
+> Image: slow incremental increase, 8 to 12 
 
-### TCP Slow Start
-If packet loss occurs, decrease the rate by half, otherwise increase it by adding a segment.  
-![tcpSlowStart](../Images/tcpSlowStart.png) 
+#### Fast Retransmit
+- On triple duplicate ACKs, the congestion window is reduced to 1 segment. 
+- The ssthresh is set to half of the previous congestion window size.
+> Image: Triple ACK at RTT 7
+
+### TCP Reno 
+$$
+\text{TCP Reno} = \text{TCP Tahoe} + \text{Fast Recovery}
+$$
+
+![img](../Images/a10.png) 
+
+#### Triple Duplicate ACK Loss
+Reno does something different compared to Tahoe when it comes to triple duplicate ACK's.  
+- It sets the cwnd to half.  
+- sets the sshthresh to half
+- Additive increase
+
+#### Fast Recovery
+- On packet loss detection through Request Time Out(RTO), reset cwnd to initcwnd. 
+- `sshthresh` = $\text{cwnd}_\text{start} / 2$
+- If the RTO timer expires that means the network is badly congested. So, the cwnd has to be reduced to the initial value in order to recover the network from congestion.
+- Slow start from the bottom. 
 
 ### TCP Cubic
 Instead of a linear increase, exponential and then log at halfway
@@ -77,24 +97,4 @@ Will every connection share the same amount of throughput?
 Yes! - Because of the additive and multiplicative properties of AIMD
 ![tcpFair](../Images/tcpFair.png) 
 > Under fair assumptions this will work, UDP can just go brrr
-
-
-### TCP Vegas
-Senses the congestion in the network before any packet loss occurs and instantly it decreases the window size. So, TCP Vegas handles the congestion without any packet loss occurring.
-
-- Use `RTT` to get a feel for the congestion situation and base your output based off of that.   
-
-### Router Centric Congestion Avoidance 
-- Modify both routers and hosts
-
-#### DECbit Scheme
-
-#### ECN
-Explicit Congestion Notification 
-- Network assisted congestion control 
-two bits in IP header marked by <u>network router</u> to indicate congestion.  
-
-#### RED
-Random Early Detection 
-- Notify the source that the queue is about to become full, to prevent more loss
 

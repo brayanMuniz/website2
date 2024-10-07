@@ -36,26 +36,6 @@ Send them in "chunks"(window packets) and that will determine the amount of numb
 
 ![r1](../Images/r1.png) 
 
-### Stop and wait 
-Uses [ARQ](./ARQ.md) (Automatic Repeat reQuest) protocols for verification.  
-- need 2 sequence numbers: 0 and 1 
-
-### Go-Back-N
-cumulative ACK: received everything up to N 
-if lose one, send up to N 
-sending 0 ... 9, N = 4 
-if you lose packet 2, send ack that you got packet 1, 
-Move window up to 2, and you will send 2 ... 5
-- Must use at least n + 1 unique sequence numbers, to avoid edgecase where receiver gets duplicate
-
-### Selective Repeat
-Sliding window technique that advances the window depending on the most up to date packet, controlled by the receiver. 
-If you have window of 2 ... 5, and you lose packet 2, buffer packets 3 to 5, and dont send those again, just send 2 again.  
-Once you get the ACK for 2, shift window to 6 ... 9   
-
-#### Seq numbers needed 
-Depends on the size of window
-- need 2n sequence numbers
-- sequence number space of 4, then you need at least 8 to not send repeats.  
-
-
+### [Stop and Wait](notes/Stop%20and%20Wait.md)
+### [Go-Back-N](notes/Go-Back-N.md)
+### [Selective Repeat](notes/Selective%20Repeat.md)

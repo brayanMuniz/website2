@@ -72,6 +72,7 @@ Goto Table: This part of the table is used after a reduction to determine which 
 
 #### Example 
 ![img](../Images/a3.png) 
+> Reduce means we found a handle
  
 | Stack               | Input            | Action                        |
 |---------------------|------------------|-------------------------------|
