@@ -6,6 +6,7 @@ tags: []
 ---
 
 # Entity-Relationship Model
+[video](https://www.youtube.com/watch?v=xsg9BDiwiJE) 
 ![erModel](../Images/erModel.png) 
 
 - Entity Type

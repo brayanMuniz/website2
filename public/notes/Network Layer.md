@@ -14,7 +14,6 @@ tags: []
   - **sender**: encapsulates segments into datagrams, passes to link layer
   - **receiver**: delivers segments to transport layer protocol
 - **network layer protocols in _every Internet device_**: hosts, routers
-
 - **routers**:
   - examines header fields in all IP datagrams passing through it
   - moves datagrams from input ports to output ports to transfer datagrams along end-to-end path
@@ -23,30 +22,32 @@ tags: []
 ## Routing and Forwarding
 ### Routing 
 Determine route taken by packets from source to destination  
-- typically implemented in  hardware 
+
 ### Forwarding
 Move packets from a router's input link to appropriate router output link
-- network-wide process 
+
+
 
 ## Control Plane 
+> Network-wide logic  
 
+Determines how datagram is routed among routers along end-to-end path from source host to destination host
+two control-plane approaches:
+### **Traditional routing algorithms**: 
+implemented in routers
+![img](../Images/a11.png) 
 
-_network-wide_ logic
-determines how datagram is routed among routers along end-to-end path from source host to destination host
-- two control-plane approaches:
-  - **traditional routing algorithms**: implemented in routers
-  - **software-defined networking (SDN)**: implemented in (remote) servers
+### **Software-defined networking (SDN)**: 
+implemented in (remote) servers
+![img](../Images/a12.png) 
 
-
-
-
-## Data Plane and Control Plane
-- **Data plane**:
+## Data Plane 
   - _local_, per-router function
   - determines how datagram arriving on router input port is forwarded to router output port
-    - values in arriving packet header
 
 ## Service Model 
+> Fuck it, we ball
+
 The internet is a **best effort service model** 
 - **simplicity of mechanism** has allowed Internet to be widely deployed and adopted
 - Sufficient **provisioning of bandwidth** allows performance of real-time applications (e.g., interactive voice, video) to be "good enough" for "most of the time"
