@@ -45,12 +45,28 @@ Some Assumptions:
 
 ### Input Port Queuing 
 - Multiple packets can be transferred in parallel as long as their output ports are ***different***.  
+
+#### Head of the Line Blocking
 ![img](../Images/b4.png) 
-The green packet wants to go to the green output, but the red packet is in front of it. This is Head of the Line Blocking.  
+The green packet wants to go to the green output, but the red packet is in front of it.  
 
 ### Output Queuing 
+![img](../Images/b6.png) 
+- **Buffering** required when datagrams arrive from fabric faster than link transmission rate.  
+**Drop policy**: which datagrams to drop if buffer is full
+- **Scheduling discipline** chooses among queued datagrams for transmission  
+  - Priority scheduling – who gets best performance, network neutrality
 
+#### How much buffering? 
+Too much buffering can increase delays.  
+Too little and you will suffer a lot of packet loss.  
 
+## [Priority Queuing](notes/Priority%20Queuing.md)
 
+#### How to classify the packet
+Overall, the ISP classifies it.  
+If its time sensitive like a TCP connection, it will take higher priority.  
+If its something like email, its lower priority.  
+You can use the port number in the packet to check these attributes.  
 
-
+## [Weighted Fair Queuing](notes/Weighted%20Fair%20Queuing.md)

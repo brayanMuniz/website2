@@ -8,7 +8,7 @@ tags: []
 # Longest Prefix Matching
 > Most specific Match
 
-when looking for forwarding table entry for given destination address, use longest address prefix that matches destination address
+When looking for forwarding table entry for given destination address, use longest address prefix that matches destination address
 
 ## Example 
 ![img](../Images/a14.png) 

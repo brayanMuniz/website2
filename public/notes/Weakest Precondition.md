@@ -15,6 +15,5 @@ The weakest precondition is the least restrictive precondition that will guarant
     - **Statement:** $a = b + 1$
     - **Postcondition:** $\{ a > 1 \}$
     - **Justification:** $b + 1 > 1 \Rightarrow b > 0$
-  - $\{ b > 10 \} \quad a = b + 1 \quad \{ a > 1 \}$
 
 

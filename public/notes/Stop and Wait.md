@@ -17,8 +17,8 @@ tags: []
 
 #### Problems
 1. **Problems due to lost data**  
-   Sender waits for ACK for an infinite amount of time.  
-   Receiver waits for data an infinite amount of time.
+   Sender waits for ACK for an finite amount of time.  
+   Receiver waits for data an finite amount of time.
 
 2. **Problems due to lost ACK**  
    Sender waits for an infinite amount of time for ACK.

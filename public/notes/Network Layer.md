@@ -26,15 +26,13 @@ Determine route taken by packets from source to destination
 ### Forwarding
 Move packets from a router's input link to appropriate router output link
 
-
-
 ## Control Plane 
 > Network-wide logic  
 
 Determines how datagram is routed among routers along end-to-end path from source host to destination host
 two control-plane approaches:
 ### **Traditional routing algorithms**: 
-implemented in routers
+Implemented in [Router](notes/Router.md) 
 ![img](../Images/a11.png) 
 
 ### **Software-defined networking (SDN)**: 

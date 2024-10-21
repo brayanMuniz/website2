@@ -15,9 +15,7 @@ tags: []
 ## Client Server
 ![clientServer](../Images/clientServerUDP.png) 
 
-## Checksum 
-The values would be in bits
-![udpCheckSum](../Images/udpCheckSum.png) 
+## [Internet Checksum](notes/Internet%20Checksum.md)
 
 
 
