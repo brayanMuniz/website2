@@ -7,8 +7,9 @@ tags:
 ---
 
 # Computer Networking
-[TCP](notes/TCP.md) and [UDP](notes/UDP.md)  
 [Transport Layer](notes/Transport%20Layer.md)
+[Network Layer](notes/Network%20Layer.md)
+[Link Layer](notes/Link%20Layer.md)
 
 
 # Resources and Misc 

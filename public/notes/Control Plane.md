@@ -12,7 +12,7 @@ Network-wide logic that controls not only how a datagram is routed along an end-
 
 ### Link State 
 - network topology and all link costs are known
-- Use Dijkstra’s  algorithm in order to get shortest path 
+- Use [Dijkstra's Algorithm](notes/Dijkstra%27s%20Algorithm.md) in order to get shortest path 
 
 #### Oscillations with congestion 
 ![img](../Images/d3.png) 

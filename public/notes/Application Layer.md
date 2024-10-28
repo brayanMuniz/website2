@@ -6,5 +6,4 @@ tags: []
 ---
 
 # Application Layer
-TODO: 
 

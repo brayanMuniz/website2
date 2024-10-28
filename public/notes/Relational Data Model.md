@@ -24,8 +24,6 @@ student = {<Benjamin...>, <Tom>}
 student = {<(Name, Benjamin)...>, }
 ```
 
-
-
 ## Cardinality
 Total number of possible unique values in a domain: 
 denoted with |dom(A)|
