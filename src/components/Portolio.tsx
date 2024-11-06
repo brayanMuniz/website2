@@ -15,14 +15,14 @@ const Portfolio: React.FC = () => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText('brayanMuniz2636@gmail.com').then(() => {
-      console.log("Email copied to clipboard"); // Debug point
+      console.log("Email copied to clipboard");
       setIsCopied(true);
       setTimeout(() => {
         setIsCopied(false);
-        console.log("Popup hidden"); // Debug point
+        console.log("Popup hidden");
       }, 2000); // Hide the message after 2 seconds
     }).catch(err => {
-      console.error("Failed to copy email: ", err); // Debug point
+      console.error("Failed to copy email: ", err);
     });
   };
 

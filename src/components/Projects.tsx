@@ -77,7 +77,7 @@ const projects: Project[] = [
     projectLink: "https://bcaa.netlify.app/",
     repoLink: "https://github.com/brayanMuniz/chat-app",
     description:
-      "My goal for this project was to be able to have a generic chat-app that could update in real-time. I learned how to fully use Vue.js and its third-party libraries Vuex and Vue-router, with a NoSQL database, Firebase, to store all the messages and chat-room images.",
+      "Chat-app that can update in real-time. Uses Vue.js and its third-party libraries Vuex and Vue-router, with Firebase, to store all the messages and chat-room images.",
     list: ["CSS", "JavaScript", "VueJs", "Firebase"],
     icons: ["faJs", "faVuejs", "faFire"],
     status: 'Done'
@@ -109,6 +109,7 @@ const Projects: React.FC = () => {
 
             <div className="order-1 md:order-1 md:w-7/12 flex flex-col justify-between">
               <div>
+
                 <div className="flex items-center mb-2">
                   <h3 className="text-xl font-bold mr-2">{project.title}</h3>
                   <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-100">
@@ -124,6 +125,7 @@ const Projects: React.FC = () => {
                   </div>
                 ))}
               </div>
+
             </div>
 
             <a
@@ -142,6 +144,40 @@ const Projects: React.FC = () => {
           </div>
         ))}
       </div>
+
+      <div className="mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div>
+
+          <h3 className="text-3xl font-bold">Computer Networking </h3>
+          <ul className="list-disc pl-4">
+            <li className="text-xl">
+              <a href="https://github.com/brayanMuniz/Go-TCP" target="_blank" className="">
+                Go TCP Client/Server
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div>
+          <h3 className="text-3xl font-bold">Systems Programming</h3>
+
+          <ul className="list-disc pl-4">
+            <li className="text-xl">
+              <a href="https://github.com/brayanMuniz/Multi-threaded-Hash-Tree" target="_blank" className="">
+                Multi-threaded-Hash-Tree
+              </a>
+
+            </li>
+          </ul>
+
+
+        </div>
+
+
+      </div>
+
     </div>
   );
 

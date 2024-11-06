@@ -54,9 +54,9 @@ Notice that the second ISP now signals for organization 1, range of addresses an
 #### DHCP
 > Dynamic Host Configuration Protocol 
 
-Uses the [Client Server Model](notes/Client%20Server%20Model.md) in order to assign IP address to a connecting host.  
-![img](../Images/c4.png) 
-
+| Image | Description |
+| -------------- | --------------- |
+| ![img](../Images/c4.png) | Uses the [Client Server Model](notes/Client%20Server%20Model.md) in order to assign IP address to a connecting host. |
 
 ## NAT
 > Network Address Translation

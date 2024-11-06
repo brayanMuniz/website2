@@ -7,7 +7,6 @@ tags: []
 # Gradient Descent 
 [Quick Video](https://www.youtube.com/watch?v=sDv4f4s2SB8) 
 
-TODO: 
 Use the sum of the squares residual as the loss function.  
 By doing this you can see how well the line will fit the data.  
 Take the derivative of the loss function.(why?)  

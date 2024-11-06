@@ -11,8 +11,4 @@ tags: []
 Execute one job in its entirety 
 Can interrupt your own job, as opposed to simple batch 
 
-EXAM: program of suite of program executed by the processor 
-
-TODO: look up blue equation
-TODO: uniprogramming and multi programming. 
 

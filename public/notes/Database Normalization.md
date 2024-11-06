@@ -6,23 +6,28 @@ tags: []
 ---
 
 # Database Normalization
-[Video](https://www.youtube.com/watch?v=GFQaEYEc8_8)
+[Quick Video](https://www.youtube.com/watch?v=GFQaEYEc8_8)
+
+> If your [DBMS](notes/DBMS.md) is not set up properly, you will get [Anomalies in Relational Model](notes/Anomalies%20in%20Relational%20Model.md), to fix this, use [Functional Dependency](notes/Functional%20Dependency%20in%20DBMS.md).  
+
+> There are several types of "forms" that you can take to make it "better", and if you are in $n$, then you must already be in $n-1$ form.  
+
 
 ## First Normal Form (1NF)
-- Eliminate repeating groups and ensure that each column contains atomic values.
-- Guidelines:
-  1. Using row order to convey information is not permitted.
-  2. Mixing data types within the same column is not permitted.
-  3. Every table must have a primary key.
-  4. Repeating groups are not allowed, and each column should hold a single value.
+[Jenny Lecture](https://youtu.be/g2yF2gyaN7I?si=gRsEyozg2kAaiWOD)  
+- There should only be atomic values in each column  
+- The values in the column should be of the same type.
+
+### Solution 
+If you want to convert the database into 1NF, there are 2 main ways. 
+- Make a new table and use the foreign keys.
+- Make a new table 
 
 ---
 
 ## Second Normal Form (2NF)
-- Eliminate partial dependencies on the primary key.
-- Guidelines:
-  - A relation must already be in 1NF.
-  - Each non-key attribute must depend on the entire primary key (not just part of it).
+- Every non-prime attribute is fully dependent on a candidate key. 
+- Do **NOT** have any partial functional dependency.
 
 ![img](../Images/c7.png)
 > This is a violation of second normal form.

@@ -8,8 +8,6 @@ tags: []
 # Link Layer
 The link layer is responsible for sending datagrams in devices that are physically adjacent.   
 
-[//]: # (TODO: On your keyboard, switch the command and the esc on thumbs with left and right arrows)
-
 ## [NIC](notes/NIC.md)
 
 ## Error detection and correction 
@@ -61,10 +59,10 @@ Send the frame in its entirety, if there is a collision, wait a frame time, then
 #### CSMA 
 > Carrier Sense Multiple Access
 
-- Carrier Sensing: listen before speaking 
-- Collision Detection: Stop talking if someone else is talking 
+| Image | Description |
+| -------------- | --------------- |
+| ![img](../Images/e8.png) | Carrier Sensing: listen before speaking. Collision Detection: Stop talking if someone else is talking  |
 
-![img](../Images/e8.png)
 > The reason that collisions happen in the first place is because of propagation delay 
 
 ##### The process
@@ -81,7 +79,7 @@ If there are not a lot of collisions, short time, if there are a lot of collisio
 Use the **binary exponential backoff** algorithm:  
 when transmitting a frame that has already experienced $n$ collisions, a node chooses the value of $K$ at random from $\{0,1,2, . . . . 2^{n-1}\}$  
 So if there is 1 collision, choose from 0, 1.  
-If there are 2 collisions, choose from: 0, 1, 2, 4  
+If there are 2 collisions, choose from: 0, 1, 2, 3
 
 > For Ethernet, the actual amount of time a node waits is K * 512 bit times (K times the amount of time needed to send 512 bits into the Ethernet) and the maximum value that n can take is capped at 10. e.g., 5.12 microseconds for a 100 Mbps Ethernet
 

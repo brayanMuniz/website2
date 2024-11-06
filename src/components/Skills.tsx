@@ -29,16 +29,18 @@ const Skills: React.FC = () => {
           <FontAwesomeIcon icon={faC} size="3x" />
           <span className="block mt-2">C</span>
         </div>
-        <div className="m-4 text-center">
-          <FontAwesomeIcon icon={faReact} size="3x" />
-          <span className="block mt-2">React</span>
-        </div>
+
       </div>
 
       <div className="flex flex-wrap justify-center">
         <div className="m-4 text-center">
           <FontAwesomeIcon icon={faVuejs} size="3x" />
           <span className="block mt-2">Vue</span>
+        </div>
+
+        <div className="m-4 text-center">
+          <FontAwesomeIcon icon={faReact} size="3x" />
+          <span className="block mt-2">React</span>
         </div>
         <div className="m-4 text-center">
           <FontAwesomeIcon icon={faNodeJs} size="3x" />

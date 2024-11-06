@@ -7,6 +7,7 @@ tags: []
 
 # Inference Rules
 > Armstrong's Axioms/Inference Rules
+> Helpful for [Functional Dependency in DBMS](notes/Functional%20Dependency%20in%20DBMS.md)
 
 [Jenny Lecture](https://youtu.be/eIH7zRVelnw?si=ooGBptjpU5JFKn0R) 
 
