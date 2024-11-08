@@ -52,8 +52,8 @@ These problems can be solved by organizing routers into autonomous systems, with
 ### OSPF 
 > Open Shortest Path First
 
-- link-state protocol that uses flooding of link-state information and a Dijkstra’s least-cost path algorithm
-- each router constructs  a complete topological map of the entire autonomous system.
+- link-state protocol that uses flooding of link-state information and a [Dijkstra's least-cost path Algorithm](notes/Dijkstra%27s%20Algorithm.md)  
+- each router constructs a complete topological map of the entire autonomous system.
 - Each router then locally runs Dijkstra’s shortest-path algorithm to determine a  shortest-path tree to all subnets, with itself as the root node.
 - All OSPF messages are authenticated.  
 

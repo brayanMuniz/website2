@@ -31,21 +31,7 @@ The ability of the receiver to both detect and correct errors is known as forwar
 To find the amount of rows and columns you need, make $i \times j$ sum up to the amount of bits.   
 Value on the bottom right is determined by the sum of the bottom row and right column.  
 
-#### Cyclic Redundancy Check (CRC) 
-[Neso Academy Video](https://www.youtube.com/watch?v=A9g6rTMblz4) 
-![img](../Images/e5.png) 
-Sender and receiver must agree upon a r + 1 bit pattern, known as a generator, $G$  
-The leftmost bit of $G$ must be 1.  
-##### Sender 
-Send r additional bits to d, and make sure that is divisible by $G$.  
-
-##### Receiver
-If $\frac{d + r}{G}$ = 0, there is **not** an error, otherwise there is an error. 
-
-###### How to find R
-Given data bits $d$, that has length $L$ and the generator $G$, append $L -1$ bits to $d$.  
-Perform binary division  
-Your remainder is $R$  
+#### [CRC](notes/CRC.md)
 
 #### Checksumming 
 Take a look at [Internet Checksum](notes/Internet%20Checksum.md)

@@ -95,6 +95,9 @@ If there are 2 collisions, choose from: 0, 1, 2, 3
 #### ARP
 > A way to translate between MAC addresses and IP addresses.  
 > Since it uses both the Link Layer Address and IP Address, it is in between the [Network Layer](notes/Network%20Layer.md) and the Link Layer.  
+> I like to think about it as to how [DNS](notes/DNS.md) works
+
+If two hosts are in the same subnet, and one host wants to send a Datagram to another, you must put both the IP address and the MAC address.  
 
 - Sender in the same LAN: Takes in a IP address as input and gets back the MAC address as a result.  
 - Each host and router saves the results in a table.   
@@ -113,8 +116,7 @@ Example: Suppose the host at the top left wants to send a datagram to the host o
 2. Now the host creates a dataframe addresses to the host at the bottom right.  
 3. The router uses a forwarding table to send the datagram to the correct host.  
 
-#### Ethernet 
-> provides an unreliable service to the network layer
+#### [Ethernet](notes/Ethernet.md)
 
 #### Link Layer Switches 
 > Receive incoming link layer frames and forwards them to the output link
@@ -165,4 +167,18 @@ Ethernet frame with a four-byte VLAN tag added into the header
 Predetermines the routes in which datagram will take based on a fixed-length label  
 However, because it adds on an additional header, some routers are will not be cabaple of handling this, so some will have this capability, and some will not.  
 ![img](../Images/f3.png)
+ 
+
+> The one with a match sends back to the querying host a response ARP packet  with the desired mapping.
+
+> ? Is this correct?? ARP requests are generally constrained within a single subnet
+
+TODO
+DELETE THIS PART: 
+
+Router `S1` will send the ARP request to `R1` and to `B`.  
+`R1` will also receive the broadcast message and also send out the ARP Request message to every host in its subnet.   
+
+
+
 

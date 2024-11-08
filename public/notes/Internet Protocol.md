@@ -21,11 +21,13 @@ The boundary between the host and the physical link is called  an interface.
 [Article by Cloudfalre](https://www.cloudflare.com/learning/network-layer/what-is-a-subnet/) 
 > It took my so long to realize that subnet just means subnetwork 
 
-![img](../Images/c2.png) 
-To determine the subnets, detach each interface from its host or router, creating islands of isolated networks, with interfaces terminating the end points of the isolated networks. Each of these isolated networks is a subnet
+| Image | Explanation |
+| -------------- | --------------- |
+| ![img](../Images/c2.png) | To determine the subnets, detach each interface from its host or router, creating islands of isolated networks, with interfaces terminating the end points of the isolated networks. Each of these isolated networks is a subnet |
 
 ### Classless Inter Domain Routing 
 > CIDR, pronounced Cider
+> This is how you read the address of a subnet
 
 - Subnet portion of address of arbitrary length
 - Address format: a.b.c.d/x, where x is # bits in subnet portion of address
