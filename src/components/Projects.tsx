@@ -152,7 +152,7 @@ const Projects: React.FC = () => {
           <h3 className="text-3xl font-bold">Computer Networking </h3>
           <ul className="list-disc pl-4">
             <li className="text-xl">
-              <a href="https://github.com/brayanMuniz/Go-TCP" target="_blank" className="">
+              <a href="https://github.com/brayanMuniz/Go-TCP" className="">
                 Go TCP Client/Server
               </a>
             </li>
@@ -165,7 +165,7 @@ const Projects: React.FC = () => {
 
           <ul className="list-disc pl-4">
             <li className="text-xl">
-              <a href="https://github.com/brayanMuniz/Multi-threaded-Hash-Tree" target="_blank" className="">
+              <a href="https://github.com/brayanMuniz/Multi-threaded-Hash-Tree" className="">
                 Multi-threaded-Hash-Tree
               </a>
 
