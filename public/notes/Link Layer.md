@@ -58,6 +58,7 @@ Send the frame in its entirety, if there is a collision, wait a frame time, then
 
 #### CSMA 
 > Carrier Sense Multiple Access
+> This is also called CSMA/CD (Carrier Sense Multiple Access with Collision Detection)
 
 | Image | Description |
 | -------------- | --------------- |
@@ -178,7 +179,5 @@ DELETE THIS PART:
 
 Router `S1` will send the ARP request to `R1` and to `B`.  
 `R1` will also receive the broadcast message and also send out the ARP Request message to every host in its subnet.   
-
-
 
 

@@ -6,22 +6,11 @@ tags: []
 ---
 
 # Maxflow-Mincut Theorem
+> This is also known as the Ford-Fulkerson Augmenting Path Algorithm
+
 [video](https://youtu.be/LdOnanfc5TM?si=fPoW_mZTUKgRjr_s) 
 
+In order to find your [Maximum Flow](notes/Maximum%20Flow.md), you must find you [Minimum Cuts](notes/Minimum%20Cuts.md).  
 
-Augmenting paths - possible path 
-- bottle neck value: the smallest value along this path.  
-
-Augment the flow 
-- update the value along the Augmenting path
-- use the bottleneck value to update the value along the path.  
-- you also create a *residual graph*, this goes backwards along your augmenting path and helps to undo bad choices you have made.   
-
-Residual Graph
-
-[//]: # (TODO)
-
-
-
-
-
+Play around the bottle necks, using **augmenting paths**.  
+How you find these paths is unspecified and is left up to the developer.  
