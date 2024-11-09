@@ -32,7 +32,7 @@ const projects: Project[] = [
     img: require("../assets/nihongoSync.png"),
     alt: "A preview of NihongoSync",
     title: "NihongoSync",
-    projectLink: "",
+    projectLink: "https://nihongosync.netlify.app",
     repoLink: "https://github.com/brayanMuniz/NihongoSync",
     description:
       "A web application to keep track of the reviews you've done in WaniKani by using a Go server with PostgreSQL. The client maps the content you've watched from Learn Natively and maps it to the level in WaniKani.",
