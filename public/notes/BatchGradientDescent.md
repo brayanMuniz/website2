@@ -1,7 +1,0 @@
----
-id: BatchGradientDescent
-aliases: []
-tags: []
----
-
-
