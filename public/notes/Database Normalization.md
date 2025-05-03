@@ -26,22 +26,43 @@ If you want to convert the database into 1NF, there are 2 main ways.
 ## Second Normal Form (2NF)
 [Jenny Lecture](https://youtu.be/O16btnzfuYU?si=8aYsdYH84VmsgEWQ) 
 - Do **NOT** have any partial functional dependency.  
-- You can **NOT** have this: $\text{Anything from the CK} \to \text{non prime attribute}$
+- You can **NOT** have this: $\text{Proper subset of CK} \to \text{non prime attribute}$
 
 
 ### Solution 
 Decompose the relation $R$ into 2 relations:  
 The relation being violated: $R_1$: $X^{+}$  
 The new relation: $R_2 = (R - X^{+}) \cup X$  
+
 | Image | Description |
 | -------------- | --------------- |
 | ![img](../Images/f8.png) | `InvDate` here is dependant on the key, `InvNum`, so this violates **2NF** |
 
 
 ## Third Normal Form (3NF)
+[Jenny Lecture](https://youtu.be/R2Z-DgZ6QFQ?si=QRVOCzvi6Xl6Tqtx) 
 - Eliminate transitive dependencies.
 As an example, if you have: 
 - $X$ as a key (prime attribute)
 - $Y,Z$ as non prime attributes
 then $X \to Y, Y \to Z$ is a violation of **3NF** 
+
+---
+
+**3NF** does not only deal with transitive dependencies, formally in order for the relation to be in **3NF**, it must satisfy this: 
+
+A table is in **3NF** if and only if for each of its non-trivial functional dependency at least one of the following conditions hold:
+1. LHS is a **Super Key** 
+2. RHS is a **Prime Attribute** 
+
+---
+
+> Note: If it is a composite key, and its a mix of Prime and non prime attributes, it is a non prime attribute.  
+
+### Solution 
+Decompose the relation $R$ into 2 relations:  
+$R_1$ = $Y^{+}$  
+The new relation: $R_2 = (R - Y^{+}) \cup Y$  
+
+
 

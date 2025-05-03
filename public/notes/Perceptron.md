@@ -11,7 +11,7 @@ Binary Classification of classifiers
 
 ## Perceptron Training Rule 
 
-in linear regresion, our measurment of error was the loss function, but here its more like a total unit test 
+in linear regression, our measurement of error was the loss function, but here its more like a total unit test 
 
 - converges only if data is linearly separable (there exists a hyper-plane which can separate positive examples from negative examples).
 - works very well when the number of input features is large.

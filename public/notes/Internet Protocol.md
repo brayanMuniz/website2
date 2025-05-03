@@ -17,13 +17,7 @@ tags: []
 The boundary between the host and the physical link is called  an interface.
 - IP address is technically associated with an interface,  rather than with the host or router containing that interface. 
 
-## Subnet 
-[Article by Cloudfalre](https://www.cloudflare.com/learning/network-layer/what-is-a-subnet/) 
-> It took my so long to realize that subnet just means subnetwork 
-
-| Image | Explanation |
-| -------------- | --------------- |
-| ![img](../Images/c2.png) | To determine the subnets, detach each interface from its host or router, creating islands of isolated networks, with interfaces terminating the end points of the isolated networks. Each of these isolated networks is a subnet |
+## [Subnet](notes/Subnet.md)
 
 ### Classless Inter Domain Routing 
 > CIDR, pronounced Cider
@@ -32,11 +26,13 @@ The boundary between the host and the physical link is called  an interface.
 - Subnet portion of address of arbitrary length
 - Address format: a.b.c.d/x, where x is # bits in subnet portion of address
 
+`200.23.16.0/23` 
+
+
 | Subnet Part            | Host Part       |
 |------------------------|-----------------|
 | 11001000 00010111 00010000 | 00000000      |
 
-`200.23.16.0/23` 
 
 ## How to get an IP Address
 
@@ -60,10 +56,7 @@ Notice that the second ISP now signals for organization 1, range of addresses an
 | -------------- | --------------- |
 | ![img](../Images/c4.png) | Uses the [Client Server Model](notes/Client%20Server%20Model.md) in order to assign IP address to a connecting host. |
 
-## NAT
-> Network Address Translation
-
-![img](../Images/c6.png) 
+## [NAT](notes/NAT.md)
 
 ## Generalized Forwarding and SDN 
 ![img](../Images/d4.png) 

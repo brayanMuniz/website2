@@ -25,14 +25,7 @@ The link layer is responsible for sending datagrams in devices that are physical
 
 ### Channel Partitioning Protocols 
 ![img](../Images/e6.png)
-#### TDM 
-> Time division multiplexing 
-
-Divide time into a **Time Frame** then divide that into how many nodes you are trying to handle $N$.  
-Each Node gets fair time.  
-
-If a Node is the only one "Speaking", then it is limited by the amount of time slots that it has.  
-If the transmission rate is $R$ then it is limited to $\frac{R}{N}$
+#### [TDM](notes/TDM.md)
 
 #### FDM 
 > Frequency-division multiplexing
@@ -77,28 +70,19 @@ Send the frame in its entirety, if there is a collision, wait a frame time, then
 Should be a random time, but how long? 
 If there are not a lot of collisions, short time, if there are a lot of collisions, a long time.  
 
-Use the **binary exponential backoff** algorithm:  
-when transmitting a frame that has already experienced $n$ collisions, a node chooses the value of $K$ at random from $\{0,1,2, . . . . 2^{n-1}\}$  
-So if there is 1 collision, choose from 0, 1.  
-If there are 2 collisions, choose from: 0, 1, 2, 3
-
+Use the [Binary Exponential Backoff](notes/Binary%20Exponential%20Backoff.md) algorithm:  
 > For Ethernet, the actual amount of time a node waits is K * 512 bit times (K times the amount of time needed to send 512 bits into the Ethernet) and the maximum value that n can take is capped at 10. e.g., 5.12 microseconds for a 100 Mbps Ethernet
 
 ### Switched Local Area Networks 
 
-#### MAC Addresses 
-> The address of the link layer, also called the physical address and the LAN address 
- 
-- Unique, no 2 devices have the same MAC address 
-  - This is in contrast to the hierarchical structure of IP addresses 
-- The broadcast address(in hex notation), FF-FF-FF-FF-FF-FF is a special address, its the broadcast address.  
+#### [MAC Address](notes/MAC%20Address.md)
 
 #### ARP
 > A way to translate between MAC addresses and IP addresses.  
 > Since it uses both the Link Layer Address and IP Address, it is in between the [Network Layer](notes/Network%20Layer.md) and the Link Layer.  
 > I like to think about it as to how [DNS](notes/DNS.md) works
 
-If two hosts are in the same subnet, and one host wants to send a Datagram to another, you must put both the IP address and the MAC address.  
+If two hosts are in the same [Subnet](notes/Subnet.md), and one host wants to send a Datagram to another, you must put both the IP address and the MAC address.  
 
 - Sender in the same LAN: Takes in a IP address as input and gets back the MAC address as a result.  
 - Each host and router saves the results in a table.   
@@ -108,7 +92,7 @@ If a host wants to get a MAC address it makes an **ARP Packet**.
 Send this query to the **Broadcast Address**.  
 Any host that can resolve the query sends back the response. The response is a standard frame, instead of a broadcast frame.  
 
-##### Sending a Query off the subnet 
+##### Sending a Query off the [Subnet](notes/Subnet.md)
 ![img](../Images/e9.png)
 > For each router interface there is also an ARP  module (in the router) and an adapter. Some traversal is needed in order to get the mac address from one subnet to another.  
 
@@ -165,19 +149,17 @@ Ethernet frame with a four-byte VLAN tag added into the header
 #### MPLS
 > Multiprotocol Label Switching
 
-Predetermines the routes in which datagram will take based on a fixed-length label  
-However, because it adds on an additional header, some routers are will not be cabaple of handling this, so some will have this capability, and some will not.  
-![img](../Images/f3.png)
+[video](https://www.youtube.com/watch?v=BuIWNecUAE8)  
+
+The best way to think about this and find its uses, is to think of traditional delivery.  
+If a package has to be opend up to figure out where it has to be sent next, this would be time consuming, but this is also how packet forwarding works in the internet, you have to extract the information in order to use it.  
+With **MPLS**, you can just stick a label on top of the package(or in our case add an additional header), and you can quickly figure out where to send the package, without having to open up the package.  
+
+> [!NOTE]
+> The traditional way of getting the destination is to use the [Longest Prefix Matching](notes/Longest%20Prefix%20Matching.md) on the **IP header** 
+
+| Image | Desc |
+| -------------- | --------------- |
+| ![img](../Images/f3.png) | Predetermines the routes in which datagram will take based on a fixed-length label. However, because it adds on an additional header, some routers are will not be cabaple of handling this, so some will have this capability, and some will not. |
+
  
-
-> The one with a match sends back to the querying host a response ARP packet  with the desired mapping.
-
-> ? Is this correct?? ARP requests are generally constrained within a single subnet
-
-TODO
-DELETE THIS PART: 
-
-Router `S1` will send the ARP request to `R1` and to `B`.  
-`R1` will also receive the broadcast message and also send out the ARP Request message to every host in its subnet.   
-
-

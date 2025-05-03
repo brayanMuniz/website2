@@ -23,7 +23,7 @@ Network-wide logic that controls not only how a datagram is routed along an end-
 - iterative, asynchronous, and distributed
 - each node receives some information from one or more of its directly attached  neighbors, performs a calculation, and then distributes the results of its calculation  back to its neighbors
 
-#### Bellman-Ford Equation
+#### [Bellman–Ford Algorithm](notes/Bellman%E2%80%93Ford%20Algorithm.md) 
 > Good News Travels Fast, Bad News Travels Slow
 
 The main idea here is **Information Propagation** 

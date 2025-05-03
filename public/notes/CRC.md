@@ -23,4 +23,6 @@ Given data bits $d$, that has length $L$ and the generator $G$, append $L -1$ bi
 Perform binary division  
 Your remainder is $R$  
 
+[//]: # (TODO: It is difficult to get a good generator, much like how its difficutl to get a good hashing function)
+
 
