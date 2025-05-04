@@ -18,7 +18,7 @@ const router = createBrowserRouter([
 
 const App: React.FC = () => {
   return (
-    <div className="App bg-misty-rose text-gray-800 min-h-screen" data-theme="light">
+    <div className="App text-gray-800 min-h-screen" data-theme="light">
       <RouterProvider router={router} />
     </div>
   );
