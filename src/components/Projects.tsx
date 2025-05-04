@@ -1,186 +1,198 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faJs, faReact, faVuejs, faGithub, faGolang } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faFire } from '@fortawesome/free-solid-svg-icons';
-
-type IconType = 'faJs' | 'faReact' | 'faVuejs' | 'faNodeJs' | 'faGolang' | 'faDatabase' | 'faFire' | 'faGithub';
-
-const iconMap: { [key: string]: any } = {
-  faJs,
+import {
+  faGithub,
   faReact,
-  faVuejs,
   faGolang,
+  faVuejs,
+  faJsSquare,
+  faCss3Alt,
+  faRust,
+  faDocker,
+  faPython,
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  faLink,
   faDatabase,
   faFire,
-  faGithub
+  faNetworkWired,
+  faGears,
+  faCode,
+} from '@fortawesome/free-solid-svg-icons';
+
+// --- Icon Mapping ---
+const techIconMap: { [key: string]: any } = {
+  'React': faReact,
+  'TypeScript': faJsSquare,
+  'JavaScript': faJsSquare,
+  'Go': faGolang,
+  'PostgreSQL': faDatabase,
+  'Vue.js': faVuejs,
+  'Firebase': faFire,
+  'CSS': faCss3Alt,
+  'Rust': faRust,
+  'Networking': faNetworkWired,
+  'C': faCode,
+  'Systems Programming': faGears,
+  'Concurrency': faGears,
+  'Python': faPython,
+  'Docker': faDocker,
 };
 
+
+// --- Project Data ---
 interface Project {
-  img: string;
-  alt: string;
+  id: string;
   title: string;
-  projectLink: string;
+  projectLink?: string;
   repoLink: string;
   description: string;
-  list: string[];
-  icons: IconType[];
-  status: 'In Development' | 'Done';
+  techStack: string[];
 }
 
-const projects: Project[] = [
+const fullStackProjects: Project[] = [
   {
-    img: require("../assets/nihongoSync.png"),
-    alt: "A preview of NihongoSync",
+    id: 'firebird',
+    title: "Firebird - Senior Project",
+    projectLink: "https://firebird-ivory.vercel.app/",
+    repoLink: "https://github.com/orgs/UTD-Senior-Design-Project-Process/repositories",
+    description:
+      "Monitors the Bluesky social platform in near real-time using its API to detect potential natural disasters (wildfires, earthquakes, etc.) based on public discourse. Analyzes skeet volume, sentiment velocity (via ML), and geographic clustering to identify anomalies. Visualizes potential incidents and sentiment trends as an early situational awareness tool.",
+    techStack: ["React", "TypeScript", "Go", "PostgreSQL", "Docker", "Python"],
+  },
+  {
+    id: 'nihongosync',
     title: "NihongoSync",
     projectLink: "https://nihongosync.netlify.app",
     repoLink: "https://github.com/brayanMuniz/NihongoSync",
     description:
-      "A web application to keep track of the reviews you've done in WaniKani by using a Go server with PostgreSQL. The client maps the content you've watched from Learn Natively and maps it to the level in WaniKani.",
-    list: ["Typescript", "Go", "PostgreSQL", "React"],
-    icons: [
-      "faJs", "faGolang", "faDatabase", "faReact"
-    ],
-    status: 'In Development'
+      "A web application to keep track of WaniKani reviews and map Learn Natively content levels using a Go server and PostgreSQL.",
+    techStack: ["TypeScript", "Go", "PostgreSQL", "React"],
   },
-
   {
-    img: require("../assets/workout-app.png"),
-    alt: "A preview of the Workout App",
+    id: 'workout-app',
     title: "Workout App",
     projectLink: "https://strength.netlify.app",
     repoLink: "https://github.com/brayanMuniz/power-app",
     description:
       "A workout app to help people keep track of their current workout and past workouts.",
-    list: ["Typescript", "VueJs", "Vuetify", "Firebase"],
-    icons: ["faJs", "faVuejs", "faFire"],
-    status: 'Done'
-
+    techStack: ["TypeScript", "Vue.js", "Firebase"],
   },
-
   {
-    img: require("../assets/maze.png"),
-    alt: "A preview of vue-maze-game",
+    id: 'vue-maze-game',
     title: "Vue Maze Game",
     projectLink: "https://vue-maze-game.netlify.app",
     repoLink: "https://github.com/brayanMuniz/vue-maze-game",
     description:
       "A simple maze game played on the browser that can be played by multiple people at once.",
-    list: ["Typescript", "VueJs", "Firebase"],
-    icons: ["faJs", "faVuejs", "faFire"],
-    status: 'Done'
+    techStack: ["TypeScript", "Vue.js", "Firebase"],
   },
-
   {
-    img: require("../assets/bcaa.png"),
-    alt: "A preview of the Chat-App website",
+    id: 'chat-app',
     title: "Chat App",
     projectLink: "https://bcaa.netlify.app/",
     repoLink: "https://github.com/brayanMuniz/chat-app",
     description:
-      "Chat-app that can update in real-time. Uses Vue.js and its third-party libraries Vuex and Vue-router, with Firebase, to store all the messages and chat-room images.",
-    list: ["CSS", "JavaScript", "VueJs", "Firebase"],
-    icons: ["faJs", "faVuejs", "faFire"],
-    status: 'Done'
-  }
+      "Real-time chat application using Vue.js, Vuex, Vue-router, and Firebase for storage.",
+    techStack: ["CSS", "JavaScript", "Vue.js", "Firebase"],
+  },
 ];
 
-function shadowClassHelper(index: number): string {
-  switch (index) {
-    case 0:
-      return 'shadow-md shadow-gray-600';
-    case 1:
-      return 'shadow-md shadow-gray-600';
-    case 2:
-      return 'shadow-lg shadow-gray-600';
-    case 3:
-      return 'shadow-lg shadow-gray-600';
-    default:
-      return '';
-  }
-}
-
-const Projects: React.FC = () => {
-
-  return (
-    <div className="text-gray-100 p-8">
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-        {projects.map((project, index) => (
-          <div key={index} className={`p-4 rounded-lg flex flex-col md:flex-row ${shadowClassHelper(index)}`}>
-
-            <div className="order-1 md:order-1 md:w-7/12 flex flex-col justify-between">
-              <div>
-
-                <div className="flex items-center mb-2">
-                  <h3 className="text-xl font-bold mr-2">{project.title}</h3>
-                  <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-100">
-                    <FontAwesomeIcon icon={faGithub} size="lg" />
-                  </a>
-                </div>
-                <p className="text-gray-300 mb-2 text-xl">{project.description}</p>
-              </div>
-              <div className="flex flex-wrap mt-auto">
-                {project.icons.map((icon, i) => (
-                  <div key={i} className="m-2 text-center">
-                    <FontAwesomeIcon icon={iconMap[icon]} className="text-2xl" />
-                  </div>
-                ))}
-              </div>
-
-            </div>
-
-            <a
-              key={index}
-              href={project.projectLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="order-1 md:order-2 w-full md:w-5/12 bg-gray-700 p-1 rounded-lg hover:bg-gray-600 transition duration-300 relative"
-            >
-              <img src={project.img} alt={project.alt} className="w-full h-80 object-cover rounded-t-lg md:rounded-t-none md:rounded-l-lg" />
-              <span className={`absolute bottom-2 right-2 text-xs font-bold px-2 py-1 rounded ${project.status === 'Done' ? 'bg-blue-400' : 'bg-yellow-500'}`}>
-                {project.status}
-              </span>
-            </a>
-
-          </div>
-        ))}
-      </div>
-
-      <div className="mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-
-        <div>
-
-          <h3 className="text-3xl font-bold">Computer Networking </h3>
-          <ul className="list-disc pl-4">
-            <li className="text-xl">
-              <a href="https://github.com/brayanMuniz/Go-TCP" className="">
-                Go TCP Client/Server
-              </a>
-            </li>
-          </ul>
-
-        </div>
-
-        <div>
-          <h3 className="text-3xl font-bold">Systems Programming</h3>
-
-          <ul className="list-disc pl-4">
-            <li className="text-xl">
-              <a href="https://github.com/brayanMuniz/Multi-threaded-Hash-Tree" className="">
-                Multi-threaded-Hash-Tree
-              </a>
-
-            </li>
-          </ul>
+const systemsNetworkingProjects: Project[] = [
+  {
+    id: 'rust-tcp',
+    title: "Rust TCP Client/Server",
+    repoLink: "https://github.com/brayanMuniz/rust-tcp",
+    description:
+      "A simple TCP client and server implementation written in Rust, demonstrating basic networking concepts.",
+    techStack: ["Rust", "Networking"],
+  },
+  {
+    id: 'go-tcp',
+    title: "Go TCP Client/Server",
+    repoLink: "https://github.com/brayanMuniz/Go-TCP",
+    description:
+      "A simple TCP client and server implementation written in Go, demonstrating basic networking concepts.",
+    techStack: ["Go", "Networking"],
+  },
+  {
+    id: 'hash-tree',
+    title: "Multi-threaded Hash Tree",
+    repoLink: "https://github.com/brayanMuniz/Multi-threaded-Hash-Tree",
+    description:
+      "A C program implementing a multi-threaded hash tree, exploring concepts in systems programming and concurrency.",
+    techStack: ["C", "Systems Programming"],
+  },
+];
 
 
-        </div>
-
-
-      </div>
-
+// --- Project Card Component ---
+const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
+  <div className="bg-white p-6 rounded-lg shadow-md border border-misty-rose flex flex-col h-full">
+    <div className="flex justify-between items-start mb-3">
+      <h4 className="text-xl font-semibold text-gray-800">{project.title}</h4>
+      <a href={project.repoLink} target="_blank" rel="noopener noreferrer" title="GitHub Repository" className="text-gray-500 hover:text-melon transition-colors duration-200 ml-4 flex-shrink-0">
+        <FontAwesomeIcon icon={faGithub} size="lg" />
+      </a>
     </div>
-  );
+    <p className="text-base text-gray-600 mb-4 leading-relaxed flex-grow">{project.description}</p>
+    <div className="mt-auto pt-4">
+      {project.projectLink && (
+        <div className="mb-4">
+          <a href={project.projectLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-melon hover:underline font-medium">
+            <FontAwesomeIcon icon={faLink} className="mr-2" />
+            Live Demo
+          </a>
+        </div>
+      )}
+      <div className="flex flex-wrap gap-4">
+        {project.techStack.map((tech) => {
+          const icon = techIconMap[tech] || faCode;
+          return (
+            <div key={tech} className="group relative">
+              <FontAwesomeIcon
+                icon={icon}
+                size="lg"
+                className="text-gray-500 group-hover:text-melon transition-colors duration-200"
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+);
 
+
+// --- Main Projects Component ---
+const Projects: React.FC = () => {
+  return (
+    <section id="projects" className="mb-16 scroll-mt-16">
+      <h2 className="text-3xl font-bold text-orchid-pink mb-8">Projects</h2>
+
+      <div className="mb-12">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-6">Full-Stack Applications</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {fullStackProjects.map((project, index) => (
+            <div key={project.id} className={index === 0 ? 'md:col-span-2' : ''}>
+              <ProjectCard project={project} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-6">Networking & Systems Programming</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {systemsNetworkingProjects.map((project, index) => (
+            <div key={project.id} className={index === 0 ? 'md:col-span-2' : ''}>
+              <ProjectCard project={project} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Projects;
