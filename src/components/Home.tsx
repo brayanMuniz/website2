@@ -9,16 +9,17 @@ import Projects from "./Projects";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex min-h-screen max-w-7xl">
+    <div className="flex min-h-screen">
+
       {/* Main Content Area (Left) */}
-      <div className="flex-grow px-6 sm:px-8 md:px-12 lg:px-40 pt-16 pb-16">
+      <div className="flex-grow px-4 sm:px-4 md:px-12 lg:px-40 pt-16 pb-16">
         <h1 className="text-4xl font-bold text-melon mb-4">Hello! I'm Brayan! 👋</h1>
 
         <div className='flex'>
 
           <p className="text-xl text-gray-700 mb-8 max-w-prose">
             Welcome to my little corner of the internet!
-            I'm a Computer Science student who loves building things with code.
+            I'm a devloper who loves building things with code.
             I'm passionate about creating fun and useful web applications and
             always eager to learn new things.
             <br />
@@ -28,7 +29,8 @@ const Home: React.FC = () => {
           <img
             src={MahiroPfp}
             alt="Mahiro pfp"
-            className="ml-2 rounded-full w-32 h-32 object-cover border-4 border-dutch-white object-top flex-shrink-0"
+            className="ml-2 rounded-full w-32 h-32 object-cover border-4 border-dutch-white 
+            object-top flex-shrink-0"
           />
 
         </div>
@@ -43,7 +45,8 @@ const Home: React.FC = () => {
       </div>
 
       {/* Sidebar (Right) */}
-      <div className="hidden md:flex md:flex-col w-80 md:w-96 pt-16 px-16 sticky top-0 h-screen overflow-y-auto">
+      <div className="hidden md:flex md:flex-col w-80 md:w-96 pt-16 px-16 sticky top-0 h-screen 
+        overflow-y-auto">
 
         <nav>
           <h3 className="text-2xl font-bold mb-4 text-gray-800">Contents</h3>

@@ -61,15 +61,6 @@ const fullStackProjects: Project[] = [
     techStack: ["React", "TypeScript", "Go", "PostgreSQL", "Docker", "Python"],
   },
   {
-    id: 'nihongosync',
-    title: "NihongoSync",
-    projectLink: "https://nihongosync.netlify.app",
-    repoLink: "https://github.com/brayanMuniz/NihongoSync",
-    description:
-      "A web application to keep track of WaniKani reviews and map Learn Natively content levels using a Go server and PostgreSQL.",
-    techStack: ["TypeScript", "Go", "PostgreSQL", "React"],
-  },
-  {
     id: 'workout-app',
     title: "Workout App",
     projectLink: "https://strength.netlify.app",
@@ -164,7 +155,6 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
 );
 
 
-// --- Main Projects Component ---
 const Projects: React.FC = () => {
   return (
     <section id="projects" className="mb-16 scroll-mt-16">
@@ -174,9 +164,22 @@ const Projects: React.FC = () => {
         <h3 className="text-2xl font-semibold text-gray-800 mb-6">Full-Stack Applications</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {fullStackProjects.map((project, index) => (
-            <div key={project.id} className={index === 0 ? 'md:col-span-2' : ''}>
-              <ProjectCard project={project} />
-            </div>
+            <React.Fragment key={project.id}>
+              <div className={project.id === 'firebird' ? 'md:col-span-2' : ''}>
+                <ProjectCard project={project} />
+              </div>
+              {project.id === 'firebird' && (
+                <div className="md:col-span-2 text-center my-8">
+                  <div className="relative flex items-center">
+                    <div className="flex-grow border-t border-gray-300"></div>
+                    <span className="flex-shrink mx-4 text-gray-500 text-sm italic">
+                      The Full-stack projects below this line were made before the era of LLMs
+                    </span>
+                    <div className="flex-grow border-t border-gray-300"></div>
+                  </div>
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>

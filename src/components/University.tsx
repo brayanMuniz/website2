@@ -22,7 +22,10 @@ const University: React.FC = () => {
       {/* Favorite Courses */}
       <div>
         <h3 className="text-2xl font-semibold text-gray-800 mb-4">Favorite Courses</h3>
-        <div className="space-y-6"> {/* Add spacing between course descriptions */}
+
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+
           {/* Course 1: Systems Programming */}
           <div>
             <h4 className="text-xl font-medium text-gray-700">Systems Programming in UNIX</h4>
@@ -69,6 +72,7 @@ const University: React.FC = () => {
               Bayesian learning, SVMs, HMMs, clustering, and various supervised/unsupervised techniques.
             </p>
           </div>
+
         </div>
 
       </div>
