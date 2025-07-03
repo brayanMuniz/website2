@@ -1,5 +1,5 @@
 import React from 'react';
-import MahiroPfp from '../assets/mahiro.jpeg';
+// import MahiroPfp from '../assets/mahiro.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
