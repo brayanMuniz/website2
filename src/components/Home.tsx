@@ -26,13 +26,6 @@ const Home: React.FC = () => {
             よろしくお願いします！
           </p>
 
-          <img
-            src={MahiroPfp}
-            alt="Mahiro pfp"
-            className="ml-2 rounded-full w-32 h-32 object-cover border-4 border-dutch-white 
-            object-top flex-shrink-0"
-          />
-
         </div>
 
         <University />
