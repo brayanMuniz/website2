@@ -1,0 +1,88 @@
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.75em 1em;
+  background: #eff1f5; /* Base */
+  color: #4c4f69;      /* Text */
+  border-radius: 6px;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+/* Comments and quotes */
+.hljs-comment,
+.hljs-quote {
+  color: #9ca0b0; /* Overlay 0 */
+  font-style: italic;
+}
+
+/* Keywords, tags, operators */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #8839ef; /* Mauve */
+  font-weight: 600;
+}
+
+/* Literals, numbers, doctags */
+.hljs-literal,
+.hljs-number,
+.hljs-doctag {
+  color: #fe640b; /* Peach */
+}
+
+/* Strings, regex, titles */
+.hljs-string,
+.hljs-regexp,
+.hljs-title,
+.hljs-name,
+.hljs-class .hljs-title {
+  color: #40a02b; /* Green */
+}
+
+/* Types, built-ins */
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-params {
+  color: #04a5e5; /* Sky */
+}
+
+/* Attributes */
+.hljs-attribute {
+  color: #df8e1d; /* Yellow */
+}
+
+/* Variables and templates */
+.hljs-variable,
+.hljs-template-variable {
+  color: #d20f39; /* Red */
+}
+
+/* Symbols and code */
+.hljs-code,
+.hljs-symbol {
+  color: #179299; /* Teal */
+}
+
+/* Meta */
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string {
+  color: #dd7878; /* Flamingo */
+}
+
+/* Links */
+.hljs-link {
+  color: #1e66f5; /* Blue */
+  text-decoration: underline;
+}
+
+/* Emphasis and strong */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+

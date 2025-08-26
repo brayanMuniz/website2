@@ -3,11 +3,21 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import './App.css'
 import Home from './components/Home';
+import CTF from './components/CTF'
+import CTFPost from './components/CTFPost'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
+  },
+  {
+    path: '/ctf',
+    element: <CTF />,
+  },
+  {
+    path: '/ctf/:platform/:slug',
+    element: <CTFPost />,
   },
   {
     path: '*',

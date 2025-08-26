@@ -23,8 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Script used to generate 
-./public/notes/generate.py
-
+./generate_content.py
 
 # Local Netlify folder
 .netlify
